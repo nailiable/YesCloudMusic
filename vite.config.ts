@@ -116,13 +116,15 @@ export default defineConfig({
             rel: 'noopener',
           },
         })
-        md.use(await Shiki({
-          defaultColor: false,
-          themes: {
-            light: 'vitesse-light',
-            dark: 'vitesse-dark',
-          },
-        }))
+        md.use(
+          await Shiki({
+            defaultColor: false,
+            themes: {
+              light: 'vitesse-light',
+              dark: 'vitesse-dark',
+            },
+          }),
+        )
       },
     }),
 

@@ -13,3 +13,15 @@ home:
       name: 推荐歌单
     top-artists:
       name: 热门歌手
+
+setting:
+  name: 设置
+  basic-setting:
+    name: 基础设置
+
+    language-setting: 语言切换
+
+    color-mode-setting:
+      name: 颜色模式
+      light-mode: 亮色
+      dark-mode: 暗色

@@ -22,7 +22,9 @@ export const availableLocales = Object.keys(localesMap)
 const loadedLanguages: string[] = []
 
 function setI18nLanguage(lang: Locale) {
+  const commonStore = useCommonStore()
   i18n.global.locale.value = lang as any
+  commonStore.setLocale(lang)
   if (typeof document !== 'undefined')
     document.querySelector('html')?.setAttribute('lang', lang)
   return lang
@@ -44,7 +46,7 @@ export async function loadLanguageAsync(lang: string): Promise<Locale> {
   return setI18nLanguage(lang)
 }
 
-export const install: UserModule = ({ app }) => {
+export const install: UserModule = async ({ app }) => {
   app.use(i18n)
-  loadLanguageAsync('en')
+  loadLanguageAsync(JSON.parse(localStorage.getItem('yes_cloud_music_common_store') || '{}')?.locale || 'en')
 }

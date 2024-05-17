@@ -18,7 +18,7 @@ const nav = computed((): NavItem[] => ([
   { icon: 'i-ph-house-duotone', text: t('nav.home'), to: '/' },
   { icon: 'i-ph-vinyl-record-duotone', text: t('nav.category'), to: '/category' },
   { icon: 'i-ph-user-circle-duotone', text: t('nav.personal'), to: '/my' },
-  { icon: 'i-ph-sliders-horizontal-duotone', text: t('nav.setting'), to: '/setting', showMobile: false },
+  { icon: 'i-ph-sliders-horizontal-duotone', text: t('nav.setting'), to: '/setting' },
 ]))
 const currentLocation = computed(() => nav.value.find(item => item.to === route.name))
 </script>
@@ -56,16 +56,30 @@ const currentLocation = computed(() => nav.value.find(item => item.to === route.
       </div>
     </header>
     <!-- Mobile -->
-    <header class="mobile-header" fixed bottom-0 left-0 z-99 w-full>
+    <header class="mobile-header bg-white/70 dark:bg-black/70" fixed bottom-0 left-0 z-99 w-full pt1 backdrop-blur-3xl border-t="solid 1px white/5">
       <nav class="mobile-nav" w-full flex items-center justify-around pb4 md:hidden>
-        <button
-          v-for="(item, index) in nav.filter((item) => item.showMobile !== false)" :key="index"
-          flex items-center gap1 p4 btn scale btn-hover-gray
-          :class="`${item.to === currentLocation?.to ? 'btn-gray' : 'btn-hover-gray'}`"
-          @click="$router.push(item.to)"
-        >
-          <div :class="`${item.icon} text-size-lg`" />
-        </button>
+        <div v-for="(item, index) in [nav[0], nav[1]]" :key="index">
+          <button
+            flex items-center gap1 p2 btn scale btn-hover-gray
+            :class="`${item.to === currentLocation?.to ? 'btn-gray' : 'btn-hover-gray'}`"
+            @click="$router.push(item.to)"
+          >
+            <div :class="`${item.icon} text-size-xl`" />
+          </button>
+        </div>
+        <!-- 开发环境，因为DEV Tools会占位置，所以稍微移上一丢丢 -->
+        <div :class="__DEV__ ? `top--9` : 'top--7'" relative rounded-full p3 smooth btn-primary>
+          <div i-ph-music-note-duotone text-size-2xl />
+        </div>
+        <div v-for="(item, index) in [nav[2], nav[3]]" :key="index">
+          <button
+            flex items-center gap1 p2 btn scale btn-hover-gray
+            :class="`${item.to === currentLocation?.to ? 'btn-gray' : 'btn-hover-gray'}`"
+            @click="$router.push(item.to)"
+          >
+            <div :class="`${item.icon} text-size-xl`" />
+          </button>
+        </div>
       </nav>
     </header>
 

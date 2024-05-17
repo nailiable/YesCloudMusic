@@ -7,8 +7,13 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    FormItem: typeof import('./components/FormItem.vue')['default']
     HoverImage: typeof import('./components/HoverImage.vue')['default']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NForm: typeof import('naive-ui')['NForm']
+    NFormItem: typeof import('naive-ui')['NFormItem']
+    NSelect: typeof import('naive-ui')['NSelect']
+    NSelectOption: typeof import('naive-ui')['NSelectOption']
     NSpin: typeof import('naive-ui')['NSpin']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

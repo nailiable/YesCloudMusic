@@ -13,3 +13,15 @@ home:
       name: Recommend song list
     top-artists:
       name: Top artists
+
+setting:
+  name: Settings
+  basic-setting:
+    name: General
+
+    language-setting: Language
+
+    color-mode-setting:
+      name: Color Mode
+      light-mode: Light
+      dark-mode: Dark
