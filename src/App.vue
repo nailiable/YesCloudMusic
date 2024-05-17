@@ -32,6 +32,8 @@ const theme = computed(() => isDark.value ? darkTheme : null)
 
 <template>
   <NConfigProvider :theme="theme" :theme-overrides="isDark ? NaiveDark : NaiveLight">
-    <RouterView />
+    <NMessageProvider>
+      <RouterView />
+    </NMessageProvider>
   </NConfigProvider>
 </template>

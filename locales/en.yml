@@ -25,3 +25,12 @@ setting:
       name: Color Mode
       light-mode: Light
       dark-mode: Dark
+
+my:
+  please-login: Please login first
+  login:
+    name: Login
+    phone: Phone
+    captcha: Code
+    send-captcha: Send code
+    submit: Login

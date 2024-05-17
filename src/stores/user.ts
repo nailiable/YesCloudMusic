@@ -1,33 +1,45 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
+import type { Return } from '@naiable/utils'
 
-export const useUserStore = defineStore('user', () => {
-  /**
-   * Current name of the user.
-   */
-  const savedName = ref('')
-  const previousNames = ref(new Set<string>())
+export interface User {
+  [id: number]: string
+}
 
-  const usedNames = computed(() => Array.from(previousNames.value))
-  const otherNames = computed(() => usedNames.value.filter(name => name !== savedName.value))
+export const useUserStore = defineStore('yes_cloud_music_user_store', () => {
+  const users = reactive<User>({})
+  const currentUser = ref<number | null>(null)
 
-  /**
-   * Changes the current name of the user and saves the one that was used
-   * before.
-   *
-   * @param name - new name to set
-   */
-  function setNewName(name: string) {
-    if (savedName.value)
-      previousNames.value.add(savedName.value)
-
-    savedName.value = name
+  const addUser = (id: number, cookie: string) => {
+    users[id] = cookie
   }
+
+  const removeUser = (id: number) => {
+    delete users[id]
+    if (currentUser.value === id)
+      currentUser.value = null
+  }
+
+  const setCurrentUser = (id: number): Return<'SUCCESS', 'NOT_FOUND'> => {
+    if (users[id] === undefined)
+      return { success: false, error: 'NOT_FOUND' }
+    currentUser.value = id
+    return { success: true, data: 'SUCCESS' }
+  }
+
+  const getCurrentUserCookie = computed(() => currentUser.value !== null ? users[currentUser.value] : null)
 
   return {
-    setNewName,
-    otherNames,
-    savedName,
+    users,
+    currentUser,
+    addUser,
+    removeUser,
+    setCurrentUser,
+    getCurrentUserCookie,
   }
+}, {
+  persist: {
+    storage: localStorage,
+  },
 })
 
 if (import.meta.hot)

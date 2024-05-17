@@ -10,7 +10,7 @@ const slots = useSlots()
 
 <template>
   <div class="song-list-card" relative h-full flex flex-col cursor-pointer gap2 smooth>
-    <HoverImage :src="src" :image-class="`h-full ${imageClass ? imageClass : ''}`">
+    <HoverImage :src="src" :image-class="`${imageClass ? imageClass : ''}`">
       <template #center>
         <slot name="center" />
       </template>
