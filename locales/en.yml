@@ -1,0 +1,15 @@
+nav:
+  category: Category
+  home: Home
+  personal: You
+  setting: Setting
+
+home:
+  listen-now: Listen Now
+  listen-now-loading: Loading
+
+  section:
+    personalized-song-list:
+      name: Recommend song list
+    top-artists:
+      name: Top artists

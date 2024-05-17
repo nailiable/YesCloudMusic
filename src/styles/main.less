@@ -1,0 +1,109 @@
+@import './markdown.css';
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: normal;
+  src:
+    url('/assets/fonts/Barlow-Regular.woff2') format('woff2'),
+    url('/assets/fonts/Barlow-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: medium;
+  src:
+    url('/assets/fonts/Barlow-Medium.woff2') format('woff2'),
+    url('/assets/fonts/Barlow-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: 600;
+  src:
+    url('/assets/fonts/Barlow-SemiBold.woff2') format('woff2'),
+    url('/assets/fonts/Barlow-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: bold;
+  src:
+    url('/assets/fonts/Barlow-Bold.woff2') format('woff2'),
+    url('/assets/fonts/Barlow-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: 800;
+  src:
+    url('/assets/fonts/Barlow-ExtraBold.woff2') format('woff2'),
+    url('/assets/fonts/Barlow-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: 900;
+  src:
+    url('/assets/fonts/Barlow-Black.woff2') format('woff2'),
+    url('/assets/fonts/Barlow-Black.ttf') format('truetype');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    Barlow,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    Helvetica Neue,
+    PingFang SC,
+    Microsoft YaHei,
+    Source Han Sans SC,
+    Noto Sans CJK SC,
+    WenQuanYi Micro Hei,
+    sans-serif,
+    microsoft uighur;
+}
+
+button,
+button * {
+  user-select: none;
+}
+
+@selected-color: rgb(248 113 113 / 30%);
+*::selection {
+  background-color: @selected-color;
+}
+
+html,
+body,
+#app {
+  /* height: 100%; */
+  margin: 0;
+  padding: 0;
+}
+
+html.dark {
+  background: #121212;
+  color-scheme: dark;
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: rgb(13, 148, 136);
+  opacity: 0.75;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
