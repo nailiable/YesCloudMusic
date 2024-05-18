@@ -42,20 +42,6 @@ jobs:
       - name: Typecheck
         run: pnpm run typecheck
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: lba0Lru35LfLtZHwnJw7oQ08 # Required
-          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
-          vercel-args: '--prod' #Optional
-          vercel-org-id: ${{ secrets.ORG_ID }}  #Required
-          vercel-project-id: ${{ secrets.PROJECT_ID }} #Required
-          alias-domains: | #Optional
-            pr-{{PR_NUMBER}}.angular.vercel-action.amond.dev
-
 
   # test:
   #   runs-on: ${{ matrix.os }}
