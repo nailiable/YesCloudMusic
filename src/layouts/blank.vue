@@ -2,7 +2,7 @@
 import { loadLanguageAsync } from '~/modules/i18n'
 
 const { locale } = useI18n()
-const { y } = useScroll(window)
+const { height: y } = useWindowSize()
 </script>
 
 <template>
