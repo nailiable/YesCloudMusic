@@ -42,6 +42,12 @@ jobs:
       - name: Typecheck
         run: pnpm run typecheck
 
+      - name: Vercel
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
   # test:
   #   runs-on: ${{ matrix.os }}
 
