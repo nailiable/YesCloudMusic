@@ -27,6 +27,7 @@ const currentLocation = computed(() => nav.value.find(item => item.to === route.
 <template>
   <div id="home-layout">
     <!-- PC -->
+
     <header
       :class="`pc-header ${y > 50 ? `bg-white/80 dark:bg-black/80` : ''}`"
       fixed left-0 top-0 z-99 hidden w-full items-center justify-between pb2 pt2.5 backdrop-blur-sm smooth md:flex p-safe
