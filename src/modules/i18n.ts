@@ -49,5 +49,5 @@ export async function loadLanguageAsync(lang: string): Promise<Locale> {
 
 export const install: UserModule = async ({ app }) => {
   app.use(i18n)
-  loadLanguageAsync(JSON.parse(localStorage.getItem('yes_cloud_music_common_store') || '{}')?.locale || 'en')
+  loadLanguageAsync(JSON.parse(globalThis?.window?.localStorage?.getItem('yes_cloud_music_common_store') || '{}')?.locale || 'en')
 }

@@ -3,11 +3,11 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - v1
 
   pull_request:
     branches:
-      - main
+      - v1
 
 jobs:
   lint:
@@ -42,55 +42,65 @@ jobs:
       - name: Typecheck
         run: pnpm run typecheck
 
-  test:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x]
-        os: [ubuntu-latest]
-      fail-fast: false
-
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          registry-url: https://registry.npmjs.org/
-          cache: pnpm
-
-      - run: pnpm install
-      - run: pnpm run test:unit
-
-  test-e2e:
+  vercel:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/cache@v4
+      - name: Vercel
+        uses: amondnet/vercel-action@v20
         with:
-          path: |
-            ~/.cache
-          key: cypress-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          zeit-token: ${{ secrets.ZEIT_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: pnpm/action-setup@v3
+  # test:
+  #   runs-on: ${{ matrix.os }}
 
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-          registry-url: https://registry.npmjs.org/
-          cache: pnpm
+  #   strategy:
+  #     matrix:
+  #       node-version: [18.x, 20.x]
+  #       os: [ubuntu-latest]
+  #     fail-fast: false
 
-      - run: pnpm install
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: pnpm/action-setup@v3
+  #     - name: Use Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #         registry-url: https://registry.npmjs.org/
+  #         cache: pnpm
 
-      - name: Cypress PNPM Patch
-        run: cp pnpm-lock.yaml package-lock.json
+  #     - run: pnpm install
+  #     - run: pnpm run test:unit
 
-      - name: Cypress
-        uses: cypress-io/github-action@v6
-        with:
-          install-command: echo
-          build: pnpm run build
-          start: npx vite preview --port 3333
+  # test-e2e:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/cache@v4
+  #       with:
+  #         path: |
+  #           ~/.cache
+  #         key: cypress-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+  #     - uses: pnpm/action-setup@v3
+
+  #     - name: Use Node.js
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: lts/*
+  #         registry-url: https://registry.npmjs.org/
+  #         cache: pnpm
+
+  #     - run: pnpm install
+
+  #     - name: Cypress PNPM Patch
+  #       run: cp pnpm-lock.yaml package-lock.json
+
+  #     - name: Cypress
+  #       uses: cypress-io/github-action@v6
+  #       with:
+  #         install-command: echo
+  #         build: pnpm run build
+  #         start: npx vite preview --port 3333

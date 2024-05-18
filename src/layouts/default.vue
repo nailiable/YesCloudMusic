@@ -5,7 +5,7 @@ import { loadLanguageAsync } from '~/modules/i18n'
 
 const route = useRoute()
 const { t, locale } = useI18n()
-const { y } = useScroll(window)
+const { y } = useWindowScroll()
 const showPlayer = inject<Ref<boolean>>('showPlayer')
 
 interface NavItem {

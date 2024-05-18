@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { darkTheme } from 'naive-ui'
+import { darkTheme, zhCN } from 'naive-ui'
 import { NaiveDark, NaiveLight } from './configs/naive'
 
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
 // they will be rendered correctly in the html results with vite-ssg
+
+const { locale } = useI18n()
 
 useHead({
   title: 'Yes Cloud Music',
@@ -33,7 +35,7 @@ provide('showPlayer', showPlayer)
 </script>
 
 <template>
-  <NConfigProvider :theme="theme" :theme-overrides="isDark ? NaiveDark : NaiveLight">
+  <NConfigProvider :theme="theme" :locale="locale === 'en' ? null : zhCN" :theme-overrides="isDark ? NaiveDark : NaiveLight">
     <NMessageProvider>
       <PlayerModal v-model:show="showPlayer" />
       <RouterView />

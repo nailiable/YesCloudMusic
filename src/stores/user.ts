@@ -37,9 +37,7 @@ export const useUserStore = defineStore('yes_cloud_music_user_store', () => {
     getCurrentUserCookie,
   }
 }, {
-  persist: {
-    storage: localStorage,
-  },
+  persist: true,
 })
 
 if (import.meta.hot)

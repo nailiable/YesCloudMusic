@@ -4,6 +4,14 @@ import { axiosRequestAdapter } from '@alova/adapter-axios'
 import axios from 'axios'
 
 export function alovaInstance() {
+  /// TODO：服务器页面做好之后，再取消注释
+  // const commonStore = useCommonStore()
+  // const router = useRouter()
+
+  // const currentServer = commonStore.getCurrentServer()
+  // if (!currentServer)
+  //   router.push('/server')
+
   return createAlova({
     statesHook: VueHook,
     requestAdapter: axiosRequestAdapter({

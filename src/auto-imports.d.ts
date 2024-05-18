@@ -6,6 +6,7 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const InnerVersionSchema: typeof import('./apis/innerVersion')['InnerVersionSchema']
   const PersonalizedResultSchema: typeof import('./apis/personalized')['PersonalizedResultSchema']
   const PersonalizedSchema: typeof import('./apis/personalized')['PersonalizedSchema']
   const TopArtistArtistsSchema: typeof import('./apis/topArtists')['TopArtistArtistsSchema']
@@ -193,6 +194,7 @@ declare global {
   const useIdle: typeof import('@vueuse/core')['useIdle']
   const useImage: typeof import('@vueuse/core')['useImage']
   const useInfiniteScroll: typeof import('@vueuse/core')['useInfiniteScroll']
+  const useInnerVersion: typeof import('./apis/innerVersion')['useInnerVersion']
   const useIntersectionObserver: typeof import('@vueuse/core')['useIntersectionObserver']
   const useInterval: typeof import('@vueuse/core')['useInterval']
   const useIntervalFn: typeof import('@vueuse/core')['useIntervalFn']
@@ -320,6 +322,7 @@ declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly InnerVersionSchema: UnwrapRef<typeof import('./apis/innerVersion')['InnerVersionSchema']>
     readonly PersonalizedResultSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedResultSchema']>
     readonly PersonalizedSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
@@ -507,6 +510,7 @@ declare module 'vue' {
     readonly useIdle: UnwrapRef<typeof import('@vueuse/core')['useIdle']>
     readonly useImage: UnwrapRef<typeof import('@vueuse/core')['useImage']>
     readonly useInfiniteScroll: UnwrapRef<typeof import('@vueuse/core')['useInfiniteScroll']>
+    readonly useInnerVersion: UnwrapRef<typeof import('./apis/innerVersion')['useInnerVersion']>
     readonly useIntersectionObserver: UnwrapRef<typeof import('@vueuse/core')['useIntersectionObserver']>
     readonly useInterval: UnwrapRef<typeof import('@vueuse/core')['useInterval']>
     readonly useIntervalFn: UnwrapRef<typeof import('@vueuse/core')['useIntervalFn']>
@@ -627,6 +631,7 @@ declare module '@vue/runtime-core' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly InnerVersionSchema: UnwrapRef<typeof import('./apis/innerVersion')['InnerVersionSchema']>
     readonly PersonalizedResultSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedResultSchema']>
     readonly PersonalizedSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
@@ -814,6 +819,7 @@ declare module '@vue/runtime-core' {
     readonly useIdle: UnwrapRef<typeof import('@vueuse/core')['useIdle']>
     readonly useImage: UnwrapRef<typeof import('@vueuse/core')['useImage']>
     readonly useInfiniteScroll: UnwrapRef<typeof import('@vueuse/core')['useInfiniteScroll']>
+    readonly useInnerVersion: UnwrapRef<typeof import('./apis/innerVersion')['useInnerVersion']>
     readonly useIntersectionObserver: UnwrapRef<typeof import('@vueuse/core')['useIntersectionObserver']>
     readonly useInterval: UnwrapRef<typeof import('@vueuse/core')['useInterval']>
     readonly useIntervalFn: UnwrapRef<typeof import('@vueuse/core')['useIntervalFn']>
