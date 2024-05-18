@@ -13,3 +13,28 @@ home:
       name: 推荐歌单
     top-artists:
       name: 热门歌手
+
+setting:
+  name: 设置
+  basic-setting:
+    name: 基础设置
+
+    language-setting: 语言切换
+
+    color-mode-setting:
+      name: 颜色模式
+      light-mode: 亮色
+      dark-mode: 暗色
+
+my:
+  please-login: 请先登录
+  login:
+    name: 登录
+    phone: 手机号
+    captcha: 验证码
+    send-captcha: 发送验证码
+    submit: 登录
+    validate-phone-error: 请输入正确的手机号
+    send-captcha-error: 验证码发送失败
+    send-captcha-success: 验证码发送成功
+    validate-captcha-error: 请输入正确的验证码

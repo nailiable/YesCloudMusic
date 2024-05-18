@@ -6,4 +6,10 @@ export default antfu(
     unocss: true,
     formatters: true,
   },
+  {
+    rules: {
+      'no-useless-return': 'off',
+      'eslint-comments/no-unlimited-disable': 'off',
+    },
+  },
 )

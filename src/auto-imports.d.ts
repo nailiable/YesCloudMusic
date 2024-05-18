@@ -9,11 +9,12 @@ declare global {
   const PersonalizedResultSchema: typeof import('./apis/personalized')['PersonalizedResultSchema']
   const PersonalizedSchema: typeof import('./apis/personalized')['PersonalizedSchema']
   const TopArtistArtistsSchema: typeof import('./apis/topArtists')['TopArtistArtistsSchema']
-  const TopArtistResultSchema: typeof import('./apis/topArtists')['TopArtistResultSchema']
   const TopArtistSchema: typeof import('./apis/topArtists')['TopArtistSchema']
+  const __DEV__: typeof import('./composables/env')['__DEV__']
   const alovaInstance: typeof import('./composables/alova')['alovaInstance']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
+  const captchaSentSchema: typeof import('./apis/captchaSent')['captchaSentSchema']
   const computed: typeof import('vue')['computed']
   const computedAsync: typeof import('@vueuse/core')['computedAsync']
   const computedEager: typeof import('@vueuse/core')['computedEager']
@@ -141,10 +142,12 @@ declare global {
   const useBroadcastChannel: typeof import('@vueuse/core')['useBroadcastChannel']
   const useBrowserLocation: typeof import('@vueuse/core')['useBrowserLocation']
   const useCached: typeof import('@vueuse/core')['useCached']
+  const useCaptchaSent: typeof import('./apis/captchaSent')['useCaptchaSent']
   const useClipboard: typeof import('@vueuse/core')['useClipboard']
   const useClipboardItems: typeof import('@vueuse/core')['useClipboardItems']
   const useCloned: typeof import('@vueuse/core')['useCloned']
   const useColorMode: typeof import('@vueuse/core')['useColorMode']
+  const useCommonStore: typeof import('./stores/common')['useCommonStore']
   const useConfirmDialog: typeof import('@vueuse/core')['useConfirmDialog']
   const useCounter: typeof import('@vueuse/core')['useCounter']
   const useCssModule: typeof import('vue')['useCssModule']
@@ -321,9 +324,11 @@ declare module 'vue' {
     readonly PersonalizedSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
     readonly TopArtistSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistSchema']>
+    readonly __DEV__: UnwrapRef<typeof import('./composables/env')['__DEV__']>
     readonly alovaInstance: UnwrapRef<typeof import('./composables/alova')['alovaInstance']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
+    readonly captchaSentSchema: UnwrapRef<typeof import('./apis/captchaSent')['captchaSentSchema']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly computedAsync: UnwrapRef<typeof import('@vueuse/core')['computedAsync']>
     readonly computedEager: UnwrapRef<typeof import('@vueuse/core')['computedEager']>
@@ -451,10 +456,12 @@ declare module 'vue' {
     readonly useBroadcastChannel: UnwrapRef<typeof import('@vueuse/core')['useBroadcastChannel']>
     readonly useBrowserLocation: UnwrapRef<typeof import('@vueuse/core')['useBrowserLocation']>
     readonly useCached: UnwrapRef<typeof import('@vueuse/core')['useCached']>
+    readonly useCaptchaSent: UnwrapRef<typeof import('./apis/captchaSent')['useCaptchaSent']>
     readonly useClipboard: UnwrapRef<typeof import('@vueuse/core')['useClipboard']>
     readonly useClipboardItems: UnwrapRef<typeof import('@vueuse/core')['useClipboardItems']>
     readonly useCloned: UnwrapRef<typeof import('@vueuse/core')['useCloned']>
     readonly useColorMode: UnwrapRef<typeof import('@vueuse/core')['useColorMode']>
+    readonly useCommonStore: UnwrapRef<typeof import('./stores/common')['useCommonStore']>
     readonly useConfirmDialog: UnwrapRef<typeof import('@vueuse/core')['useConfirmDialog']>
     readonly useCounter: UnwrapRef<typeof import('@vueuse/core')['useCounter']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
@@ -624,9 +631,11 @@ declare module '@vue/runtime-core' {
     readonly PersonalizedSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
     readonly TopArtistSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistSchema']>
+    readonly __DEV__: UnwrapRef<typeof import('./composables/env')['__DEV__']>
     readonly alovaInstance: UnwrapRef<typeof import('./composables/alova')['alovaInstance']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
+    readonly captchaSentSchema: UnwrapRef<typeof import('./apis/captchaSent')['captchaSentSchema']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly computedAsync: UnwrapRef<typeof import('@vueuse/core')['computedAsync']>
     readonly computedEager: UnwrapRef<typeof import('@vueuse/core')['computedEager']>
@@ -754,10 +763,12 @@ declare module '@vue/runtime-core' {
     readonly useBroadcastChannel: UnwrapRef<typeof import('@vueuse/core')['useBroadcastChannel']>
     readonly useBrowserLocation: UnwrapRef<typeof import('@vueuse/core')['useBrowserLocation']>
     readonly useCached: UnwrapRef<typeof import('@vueuse/core')['useCached']>
+    readonly useCaptchaSent: UnwrapRef<typeof import('./apis/captchaSent')['useCaptchaSent']>
     readonly useClipboard: UnwrapRef<typeof import('@vueuse/core')['useClipboard']>
     readonly useClipboardItems: UnwrapRef<typeof import('@vueuse/core')['useClipboardItems']>
     readonly useCloned: UnwrapRef<typeof import('@vueuse/core')['useCloned']>
     readonly useColorMode: UnwrapRef<typeof import('@vueuse/core')['useColorMode']>
+    readonly useCommonStore: UnwrapRef<typeof import('./stores/common')['useCommonStore']>
     readonly useConfirmDialog: UnwrapRef<typeof import('@vueuse/core')['useConfirmDialog']>
     readonly useCounter: UnwrapRef<typeof import('@vueuse/core')['useCounter']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>

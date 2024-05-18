@@ -13,3 +13,28 @@ home:
       name: Recommend song list
     top-artists:
       name: Top artists
+
+setting:
+  name: Settings
+  basic-setting:
+    name: General
+
+    language-setting: Language
+
+    color-mode-setting:
+      name: Color Mode
+      light-mode: Light
+      dark-mode: Dark
+
+my:
+  please-login: Please login first
+  login:
+    name: Login
+    phone: Phone
+    captcha: Code
+    send-captcha: Send code
+    submit: Login
+    validate-phone-error: Please enter the correct phone number
+    send-captcha-error: Failed to send code
+    send-captcha-success: Code sent successfully
+    validate-captcha-error: Please enter the correct code

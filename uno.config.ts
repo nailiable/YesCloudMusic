@@ -58,6 +58,26 @@ export default defineConfig({
       'title-2',
       'text-3xl font-bold',
     ],
+    [
+      'title-3',
+      'text-2xl font-bold',
+    ],
+    [
+      'title-4',
+      'text-xl font-bold',
+    ],
+    [
+      'title-5',
+      'text-lg font-bold',
+    ],
+    [
+      'title-6',
+      'text-base font-bold',
+    ],
+    [
+      'selector',
+      'btn btn-gray smooth rounded-md w-full focus:outline-none border-solid border-gray-300 dark:border-gray-300/10 border-1px pl1',
+    ],
   ],
   presets: [
     presetUno(),

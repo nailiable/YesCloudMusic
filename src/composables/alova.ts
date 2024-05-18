@@ -9,6 +9,7 @@ export function alovaInstance() {
     requestAdapter: axiosRequestAdapter({
       axios: axios.create({
         baseURL: 'https://server.xhhzs.cn',
+        withCredentials: true,
       }),
     }),
   })
