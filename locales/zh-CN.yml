@@ -38,3 +38,15 @@ my:
     send-captcha-error: 验证码发送失败
     send-captcha-success: 验证码发送成功
     validate-captcha-error: 请输入正确的验证码
+
+server:
+  name: 服务器
+  description: YesCloudMusic 依靠三方服务器提供数据支持。如果提示服务器不可用，请更换服务器链接。
+  add-new-server: 添加服务器
+  no-server: 无服务器，请至少添加一个服务器
+  unknown-what-is-server: 服务器是什么
+
+  help:
+    title: 帮助
+    p1: 请填写`NeteaseCloudMusicApi`的服务器地址，否则无法正常使用。
+    back: 返回

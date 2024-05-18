@@ -38,3 +38,14 @@ my:
     send-captcha-error: Failed to send code
     send-captcha-success: Code sent successfully
     validate-captcha-error: Please enter the correct code
+
+server:
+  name: Server
+  description: YesCloudMusic relies on third-party servers to provide data support. If the server is unavailable, please change the server link.
+  add-new-server: Add server
+  no-server: No server, please add at least one server
+  unknown-what-is-server: What is a server?
+
+  help:
+    title: Help
+    back: Back
