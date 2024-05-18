@@ -32,19 +32,19 @@ watch(isDark, value => colorMode.value = value ? 'dark' : 'light')
       {{ $t('setting.basic-setting.name') }}
     </h2>
     <section flex flex-col gap5>
-      <FormItem label="语言" icon="i-ph-translate-duotone" label-position="left">
-        <NSelect
-          v-model:value="currentLocale"
-          max-w-sm
-          :options="localeOptions"
-        />
+      <FormItem :label="$t('setting.basic-setting.language-setting')" icon="i-ph-translate-duotone" label-position="left">
+        <select v-model="currentLocale" selector class="select">
+          <option v-for="(option, index) in localeOptions" :key="index" :value="option.value">
+            {{ option.label }}
+          </option>
+        </select>
       </FormItem>
-      <FormItem label="颜色模式" icon="i-ph-moon-duotone" label-position="left">
-        <NSelect
-          v-model:value="colorMode"
-          max-w-sm
-          :options="colorModeOptions"
-        />
+      <FormItem :label="$t('setting.basic-setting.color-mode-setting.name')" icon="i-ph-moon-duotone" label-position="left">
+        <select v-model="colorMode" selector class="select">
+          <option v-for="(option, index) in colorModeOptions" :key="index" :value="option.value">
+            {{ option.label }}
+          </option>
+        </select>
       </FormItem>
     </section>
   </div>

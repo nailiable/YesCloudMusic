@@ -9,6 +9,7 @@ import type { UserModule } from '~/types'
 const i18n = createI18n({
   legacy: false,
   locale: '',
+  fallbackLocale: 'en',
   messages: {},
 })
 

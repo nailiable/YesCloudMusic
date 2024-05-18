@@ -2,6 +2,7 @@
 import { z } from 'zod'
 
 const message = useMessage()
+const { t } = useI18n()
 
 const phone = ref('')
 const captcha = ref('')
@@ -9,27 +10,35 @@ const captcha = ref('')
 function validate() {
   return {
     validatePhone() {
-      const phoneSchema = z.string().length(11).safeParse(phone.value)
+      const phoneSchema = z.string()
+        .transform(v => v.trim())
+        .safeParse(phone.value)
       if (phoneSchema.success === false)
-        message.error('请输入正确的手机号码')
+        message.error(t('my.login.validate-phone-error'))
       return phoneSchema.success
     },
     validateCaptcha() {
-      const captchaSchema = z.string().length(6).safeParse(captcha.value)
+      const captchaSchema = z.string()
+        .transform(v => v.trim())
+        .safeParse(captcha.value)
       if (captchaSchema.success === false)
-        message.error('请输入正确的验证码')
+        message.error(t('my.login.validate-captcha-error'))
       return captchaSchema.success
     },
   }
 }
 
-function sendCaptcha(e: MouseEvent) {
+async function sendCaptcha(e: MouseEvent) {
   e.preventDefault()
-  const isSuccess = validate().validatePhone() && validate().validateCaptcha()
+  const isSuccess = validate().validatePhone()
   /* eslint-disable */
   if (!isSuccess) return
 
   // TODO: Send captcha
+  const { code, message: ResponseMessage } = await useCaptchaSent(true, phone.value).send()
+  if (!code || code !== 200)
+    return message.error(ResponseMessage || t('my.login.send-captcha-error'))
+  message.success(t('my.login.send-captcha-success'))
 }
 
 function onFormSubmit(e: Event) {
@@ -39,6 +48,7 @@ function onFormSubmit(e: Event) {
   if (!isSuccess) return
 
   // TODO: Login
+
 }
 </script>
 

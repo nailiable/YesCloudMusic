@@ -10,7 +10,9 @@ export const NaiveLight = {
   Message: {
     borderRadius: '6px',
     colorWarning: '#efa11f4d',
+    colorError: '#D130504d',
     boxShadowWarning: 'none',
+    boxShadowError: 'none',
   },
 } satisfies GlobalThemeOverrides
 

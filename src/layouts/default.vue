@@ -6,6 +6,7 @@ import { loadLanguageAsync } from '~/modules/i18n'
 const route = useRoute()
 const { t, locale } = useI18n()
 const { y } = useScroll(window)
+const showPlayer = inject<Ref<boolean>>('showPlayer')
 
 interface NavItem {
   icon: string
@@ -30,7 +31,7 @@ const currentLocation = computed(() => nav.value.find(item => item.to === route.
       :class="`pc-header ${y > 50 ? `bg-white/80 dark:bg-black/80` : ''}`"
       fixed left-0 top-0 z-99 hidden w-full items-center justify-between pb2 pt2.5 backdrop-blur-sm smooth md:flex p-safe
     >
-      <button id="music" z-9 rounded-full p2.5 scale btn-hover-gray>
+      <button id="music" z-9 rounded-full p2.5 scale btn-hover-gray @click="showPlayer = !showPlayer">
         <div i-ph-music-note-duotone text-size-lg />
       </button>
       <nav class="pc-nav" absolute left-0 w-full flex items-center justify-center gap3 pb1>

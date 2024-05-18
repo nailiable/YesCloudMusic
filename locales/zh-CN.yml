@@ -34,3 +34,7 @@ my:
     captcha: 验证码
     send-captcha: 发送验证码
     submit: 登录
+    validate-phone-error: 请输入正确的手机号
+    send-captcha-error: 验证码发送失败
+    send-captcha-success: 验证码发送成功
+    validate-captcha-error: 请输入正确的验证码

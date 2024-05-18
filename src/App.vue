@@ -28,11 +28,14 @@ useHead({
 })
 
 const theme = computed(() => isDark.value ? darkTheme : null)
+const showPlayer = ref(false)
+provide('showPlayer', showPlayer)
 </script>
 
 <template>
   <NConfigProvider :theme="theme" :theme-overrides="isDark ? NaiveDark : NaiveLight">
     <NMessageProvider>
+      <PlayerModal v-model:show="showPlayer" />
       <RouterView />
     </NMessageProvider>
   </NConfigProvider>
