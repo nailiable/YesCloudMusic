@@ -9,3 +9,5 @@ Opinionated refactor new [YesPlayMusic](https://github.com/qier222/YesPlayMusic)
 </div>
 
 > Live preview: [https://yes.naily.cc](https://yes.naily.cc)
+
+Personal project, there is still a lot of work to do, welcome to make suggestions and contribute code.
