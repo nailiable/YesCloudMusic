@@ -24,6 +24,7 @@ if (!userStore.currentUser || Object.keys(userStore.users).length === 0) {
       </h1>
       <img max-w-18 rounded-full smooth md:max-w-15 active:animate-bounce-alt :src="data.data.profile.avatarUrl">
     </div>
+
     <!-- 个人信息 -->
     <div id="info" flex flex-col gap5>
       <div mt5 flex flex-col gap2 md:mt1 md:flex-row>
