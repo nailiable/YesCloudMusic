@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { darkTheme, zhCN } from 'naive-ui'
 import { NaiveDark, NaiveLight } from './configs/naive'
+import OgImage from './assets/images/og-image.png'
 
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
@@ -9,7 +10,7 @@ import { NaiveDark, NaiveLight } from './configs/naive'
 const { locale } = useI18n()
 
 useHead({
-  title: 'Yes Cloud Music',
+  title: `Yes Cloud Music`,
   meta: [
     {
       name: 'description',
@@ -18,6 +19,26 @@ useHead({
     {
       name: 'theme-color',
       content: () => isDark.value ? '#121212' : '#ffffff',
+    },
+    {
+      name: 'og:title',
+      content: 'Yes Cloud Music',
+    },
+    {
+      name: 'og:description',
+      content: 'Opinionated new yes music client',
+    },
+    {
+      name: 'og:image',
+      content: OgImage,
+    },
+    {
+      name: 'twitter:image',
+      content: OgImage,
+    },
+    {
+      name: 'author',
+      content: 'Naily Zero',
     },
   ],
   link: [

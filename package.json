@@ -4,7 +4,7 @@
   "packageManager": "pnpm@9.1.1",
   "scripts": {
     "build": "vite-ssg build",
-    "dev": "vite --port 3333 --open",
+    "dev": "vite --port 3333",
     "lint": "eslint . --fix",
     "preview": "vite preview",
     "preview-https": "serve dist",
