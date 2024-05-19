@@ -24,7 +24,7 @@ watch(isDark, value => colorMode.value = value ? 'dark' : 'light')
 </script>
 
 <template>
-  <div id="setting" class="2xl:px70" lg:px-40 xl:px-60>
+  <div id="setting" class="2xl:px70" lg:px-40 xl:px-40>
     <h1 mb4 block title-1 md:hidden>
       {{ $t('setting.name') }}
     </h1>

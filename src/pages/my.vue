@@ -12,7 +12,7 @@ if (!userStore.currentUser || Object.keys(userStore.users).length === 0) {
 </script>
 
 <template>
-  <div>
+  <div class="2xl:px70 xl:px-40">
     <!-- 标题 -->
     <div id="title" flex flex-col flex-col-reverse gap5 md:flex-row md:items-center>
       <h1 w-full title-1>
