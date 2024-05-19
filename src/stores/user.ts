@@ -27,6 +27,7 @@ export const useUserStore = defineStore('yes_cloud_music_user_store', () => {
   }
 
   const getCurrentUserCookie = computed(() => currentUser.value !== null ? users[currentUser.value] : null)
+  const getCurrentUserCookieRaw = () => currentUser.value !== null ? users[currentUser.value] : null
 
   return {
     users,
@@ -35,6 +36,7 @@ export const useUserStore = defineStore('yes_cloud_music_user_store', () => {
     removeUser,
     setCurrentUser,
     getCurrentUserCookie,
+    getCurrentUserCookieRaw,
   }
 }, {
   persist: true,

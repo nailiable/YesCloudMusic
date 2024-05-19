@@ -8,7 +8,7 @@ meta:
 <p>{{ $t('server.help.p1') }}</p>
 
 <div flex justify-center mt10>
-  <button @click="$router.push('/')" btn btn-primary scale>
+  <button @click="$router.back()" btn btn-primary scale>
   {{ $t('server.help.back') }}
   </button>
 </div>

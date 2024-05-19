@@ -7,6 +7,9 @@ export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const InnerVersionSchema: typeof import('./apis/innerVersion')['InnerVersionSchema']
+  const LoginCellphoneSchema: typeof import('./apis/loginCellphone')['LoginCellphoneSchema']
+  const LoginStatusDataSchema: typeof import('./apis/loginStatus')['LoginStatusDataSchema']
+  const LoginStatusSchema: typeof import('./apis/loginStatus')['LoginStatusSchema']
   const PersonalizedResultSchema: typeof import('./apis/personalized')['PersonalizedResultSchema']
   const PersonalizedSchema: typeof import('./apis/personalized')['PersonalizedSchema']
   const TopArtistArtistsSchema: typeof import('./apis/topArtists')['TopArtistArtistsSchema']
@@ -203,6 +206,8 @@ declare global {
   const useLink: typeof import('vue-router/auto')['useLink']
   const useLoadingBar: typeof import('naive-ui')['useLoadingBar']
   const useLocalStorage: typeof import('@vueuse/core')['useLocalStorage']
+  const useLoginCellPhone: typeof import('./apis/loginCellphone')['useLoginCellPhone']
+  const useLoginStatus: typeof import('./apis/loginStatus')['useLoginStatus']
   const useMagicKeys: typeof import('@vueuse/core')['useMagicKeys']
   const useManualRefHistory: typeof import('@vueuse/core')['useManualRefHistory']
   const useMediaControls: typeof import('@vueuse/core')['useMediaControls']
@@ -323,6 +328,9 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly InnerVersionSchema: UnwrapRef<typeof import('./apis/innerVersion')['InnerVersionSchema']>
+    readonly LoginCellphoneSchema: UnwrapRef<typeof import('./apis/loginCellphone')['LoginCellphoneSchema']>
+    readonly LoginStatusDataSchema: UnwrapRef<typeof import('./apis/loginStatus')['LoginStatusDataSchema']>
+    readonly LoginStatusSchema: UnwrapRef<typeof import('./apis/loginStatus')['LoginStatusSchema']>
     readonly PersonalizedResultSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedResultSchema']>
     readonly PersonalizedSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
@@ -519,6 +527,8 @@ declare module 'vue' {
     readonly useLink: UnwrapRef<typeof import('vue-router/auto')['useLink']>
     readonly useLoadingBar: UnwrapRef<typeof import('naive-ui')['useLoadingBar']>
     readonly useLocalStorage: UnwrapRef<typeof import('@vueuse/core')['useLocalStorage']>
+    readonly useLoginCellPhone: UnwrapRef<typeof import('./apis/loginCellphone')['useLoginCellPhone']>
+    readonly useLoginStatus: UnwrapRef<typeof import('./apis/loginStatus')['useLoginStatus']>
     readonly useMagicKeys: UnwrapRef<typeof import('@vueuse/core')['useMagicKeys']>
     readonly useManualRefHistory: UnwrapRef<typeof import('@vueuse/core')['useManualRefHistory']>
     readonly useMediaControls: UnwrapRef<typeof import('@vueuse/core')['useMediaControls']>
@@ -632,6 +642,9 @@ declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly InnerVersionSchema: UnwrapRef<typeof import('./apis/innerVersion')['InnerVersionSchema']>
+    readonly LoginCellphoneSchema: UnwrapRef<typeof import('./apis/loginCellphone')['LoginCellphoneSchema']>
+    readonly LoginStatusDataSchema: UnwrapRef<typeof import('./apis/loginStatus')['LoginStatusDataSchema']>
+    readonly LoginStatusSchema: UnwrapRef<typeof import('./apis/loginStatus')['LoginStatusSchema']>
     readonly PersonalizedResultSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedResultSchema']>
     readonly PersonalizedSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
@@ -828,6 +841,8 @@ declare module '@vue/runtime-core' {
     readonly useLink: UnwrapRef<typeof import('vue-router/auto')['useLink']>
     readonly useLoadingBar: UnwrapRef<typeof import('naive-ui')['useLoadingBar']>
     readonly useLocalStorage: UnwrapRef<typeof import('@vueuse/core')['useLocalStorage']>
+    readonly useLoginCellPhone: UnwrapRef<typeof import('./apis/loginCellphone')['useLoginCellPhone']>
+    readonly useLoginStatus: UnwrapRef<typeof import('./apis/loginStatus')['useLoginStatus']>
     readonly useMagicKeys: UnwrapRef<typeof import('@vueuse/core')['useMagicKeys']>
     readonly useManualRefHistory: UnwrapRef<typeof import('@vueuse/core')['useManualRefHistory']>
     readonly useMediaControls: UnwrapRef<typeof import('@vueuse/core')['useMediaControls']>

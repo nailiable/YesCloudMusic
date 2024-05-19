@@ -28,6 +28,7 @@ setting:
 
 my:
   please-login: 请先登录
+  hello: 你好,
   login:
     name: 登录
     phone: 手机号
@@ -38,6 +39,8 @@ my:
     send-captcha-error: 验证码发送失败
     send-captcha-success: 验证码发送成功
     validate-captcha-error: 请输入正确的验证码
+    success: 登录成功
+    error: 登录失败
 
 server:
   name: 服务器

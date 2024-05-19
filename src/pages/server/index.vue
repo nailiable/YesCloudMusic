@@ -21,9 +21,9 @@ const editableViewState = reactive({
     </p>
 
     <!-- 添加服务器 弹框 -->
-    <div v-if="editableViewState.isShow" fixed left-0 top-0 z-999 h-full w-full flex class="bg-black/60 backdrop-blur-2xl">
+    <div v-if="editableViewState.isShow" fixed left-0 top-0 z-999 h-full w-full flex class="bg-white/60 backdrop-blur-xl dark:bg-black/60">
       <form mt10 w-full flex flex-col items-center justify-center gap3>
-        <div md:border="1px solid white/10" max-w-sm w-full rounded-2xl p8>
+        <div md:border="1px solid black/10 dark:white/10" max-w-sm w-full rounded-2xl p8>
           <!-- eslint-disable -->
           <h1 mb8 text-center title-3>{{ $t('server.add-new-server') }}</h1>
           <NFormItem w-full size="small" label="请输入名称">
