@@ -2,16 +2,19 @@
 import { z } from 'zod'
 
 const message = useMessage()
+const userStore = useUserStore()
+const router = useRouter()
 const { t } = useI18n()
 
-const phone = ref('')
-const captcha = ref('')
+const phone = reactive({ value: '' })
+const captcha = reactive({ value: '' })
 
 function validate() {
   return {
     validatePhone() {
       const phoneSchema = z.string()
         .transform(v => v.trim())
+        .refine(v => v.length !== 0)
         .safeParse(phone.value)
       if (phoneSchema.success === false)
         message.error(t('my.login.validate-phone-error'))
@@ -20,6 +23,7 @@ function validate() {
     validateCaptcha() {
       const captchaSchema = z.string()
         .transform(v => v.trim())
+        .refine(v => v.length !== 0)
         .safeParse(captcha.value)
       if (captchaSchema.success === false)
         message.error(t('my.login.validate-captcha-error'))
@@ -41,14 +45,23 @@ async function sendCaptcha(e: MouseEvent) {
   message.success(t('my.login.send-captcha-success'))
 }
 
-function onFormSubmit(e: Event) {
+async function onFormSubmit(e: Event) {
   e.preventDefault()
   const isSuccess = validate().validatePhone() && validate().validateCaptcha()
   /* eslint-disable */
   if (!isSuccess) return
 
-  // TODO: Login
-
+  const { onSuccess: loginRequestSuccess, onError: loginRequestError } = useLoginCellPhone(true, phone.value, captcha.value)
+  loginRequestSuccess(({ data }) => {
+    userStore.addUser(data.account.id, data.cookie)
+    userStore.setCurrentUser(data.account.id)
+    message.success(t('my.login.success'))
+    router.push('/')
+  })
+  loginRequestError((error) => {
+    message.error(error.error.response.data.message ? error.error.response.data.message : t('my.login.error'))
+    console.error(error)
+  })
 }
 </script>
 
@@ -59,12 +72,12 @@ function onFormSubmit(e: Event) {
     <form w-full md:w-sm mt10 smooth flex flex-col gap5 @submit="onFormSubmit">
       <div flex items-center gap3 relative>
         <div i-ph-phone-duotone text-size-xl md:absolute md:left--10 />
-        <input v-model="phone" type="tel" outline-none smooth btn-gray px4 py3 w-full rounded-lg id="username" :placeholder="$t('my.login.phone')" />
+        <input v-model="phone.value" type="tel" outline-none smooth btn-gray px4 py3 w-full rounded-lg id="username" :placeholder="$t('my.login.phone')" />
       </div>
       <div flex items-center gap3 relative>
         <div i-ph-lock-duotone text-size-xl md:absolute md:left--10 />
         <div flex w-full>
-          <input v-model="captcha" outline-none smooth btn-gray px4 py3 w-full rounded-l-lg rounded-r-none type="tel" id="username" :placeholder="$t('my.login.captcha')" />
+          <input v-model="captcha.value" outline-none smooth btn-gray px4 py3 w-full rounded-l-lg rounded-r-none type="tel" id="username" :placeholder="$t('my.login.captcha')" />
           <button @click="sendCaptcha" text-nowrap smooth btn-gray px5 rounded-r-lg>{{ $t("my.login.send-captcha") }}</button>
         </div>
       </div>

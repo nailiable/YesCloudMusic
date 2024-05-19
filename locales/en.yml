@@ -28,6 +28,7 @@ setting:
 
 my:
   please-login: Please login first
+  hello: Hello,
   login:
     name: Login
     phone: Phone
@@ -38,6 +39,8 @@ my:
     send-captcha-error: Failed to send code
     send-captcha-success: Code sent successfully
     validate-captcha-error: Please enter the correct code
+    success: Login successfully
+    error: Login failed
 
 server:
   name: Server

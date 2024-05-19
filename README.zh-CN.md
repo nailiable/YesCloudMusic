@@ -8,4 +8,6 @@ YesCloudMusic
 
 </div>
 
-> TODO
+> 在线预览: [https://yes.naily.cc](https://yes.naily.cc)
+
+个人项目，目前还有很多工作要做，欢迎提出建议和贡献代码。

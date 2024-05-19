@@ -12,12 +12,19 @@ export function alovaInstance() {
   // if (!currentServer)
   //   router.push('/server')
 
+  const userStore = useUserStore()
+  const currentUserCookie = userStore.getCurrentUserCookieRaw()
+
   return createAlova({
     statesHook: VueHook,
     requestAdapter: axiosRequestAdapter({
       axios: axios.create({
         baseURL: 'https://server.xhhzs.cn',
         withCredentials: true,
+        params: {
+          cookie: currentUserCookie,
+          timestamp: Date.now(),
+        },
       }),
     }),
   })
