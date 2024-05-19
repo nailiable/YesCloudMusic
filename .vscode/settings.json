@@ -1,7 +1,8 @@
 {
   "material-icon-theme.folders.associations": {
     "composables": "hook",
-    "stores": "shared"
+    "stores": "shared",
+    "login": "admin"
   },
   "cSpell.words": ["Vitesse", "Vite", "unocss", "vitest", "vueuse", "pinia", "demi", "antfu", "iconify", "intlify", "vitejs", "unplugin", "pnpm"],
   "i18n-ally.sourceLanguage": "en",
