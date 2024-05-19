@@ -6,9 +6,8 @@ const { loading: TopArtistsLoading, data: TopArtistsData } = useTopArtists(true,
 <template>
   <div id="home">
     <!-- 手机端标题 -->
-    <h1 block title-1 md:hidden>
-      {{ $t('home.listen-now') }}
-    </h1>
+    <!-- eslint-disable -->
+    <h1 block title-1 md:hidden>{{ $t('home.listen-now') }}</h1>
 
     <div id="home-sections" mt3 flex flex-col gap10 md:mt20>
       <!-- 歌单推荐 -->

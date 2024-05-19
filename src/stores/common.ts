@@ -10,7 +10,9 @@ export const useCommonStore = defineStore('yes_cloud_music_common_store', () => 
     locale.value = value
   }
 
-  const servers = ref<CommonStoreServer>({})
+  const servers = ref<CommonStoreServer>({
+    默认源: 'https://server.xhhzs.cn',
+  })
   const currentServer = ref<keyof CommonStoreServer | null>(null)
   const addServer = (serverName: string, serverUrl: string) => {
     servers.value[serverName] = serverUrl

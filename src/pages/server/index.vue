@@ -51,9 +51,14 @@ const editableViewState = reactive({
     </NEmpty>
 
     <!-- 这才是真正的服务器列表 -->
-    <div>
-      <div v-for="(item, index) in store.servers" :key="index">
-        {{ item }}
+    <div w-full flex justify-center mt10>
+      <div v-for="(address, name) in store.servers" :key="name">
+        <div w-full border="1px solid black/10 dark:white/10" pr10 pl8 py3 rounded-lg flex flex-col>
+          <button btn scale btn-gray rounded-full p3 type="button" @click="store.removeServer(name as string)">
+            <div i-ph-trash-duotone />
+            {{ address }}
+          </button>
+        </div>
       </div>
     </div>
 
