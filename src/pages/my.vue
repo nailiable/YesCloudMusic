@@ -4,6 +4,7 @@ const userStore = useUserStore()
 const router = useRouter()
 const message = useMessage()
 const { t } = useI18n()
+const { width } = useWindowSize()
 
 const { data, onComplete } = useLoginStatus(true)
 onComplete(() => progress.done())
@@ -17,21 +18,28 @@ if (!userStore.currentUser || Object.keys(userStore.users).length === 0) {
 <template>
   <div class="2xl:px70 xl:px-40">
     <!-- 标题 -->
-    <div id="title" flex flex-col flex-col-reverse gap5 md:flex-row md:items-center>
-      <h1 w-full title-1>
-        {{ $t("my.hello") }}
+    <section id="title" flex flex-col flex-col-reverse gap3 md:flex-row md:items-center md:gap5>
+      <h1 w-full flex md:title-1 title-3>
+        <div hidden md:block>
+          {{ $t("my.hello") }}
+        </div>
         {{ data.data.profile.nickname }}
       </h1>
       <img max-w-18 rounded-full smooth md:max-w-15 active:animate-bounce-alt :src="data.data.profile.avatarUrl">
-    </div>
+    </section>
 
     <!-- 个人信息 -->
-    <div id="info" flex flex-col gap5>
-      <div mt5 flex flex-col gap2 md:mt1 md:flex-row>
-        <!-- eslint-disable -->
-        <div opacity70>生日: {{ new Date(data.data.profile.birthday as number).toLocaleDateString() }}</div>
-        <div opacity70>ID: {{ data.data.profile.userId }}</div>
-      </div>
-    </div>
+    <section id="info" mt3 md:flex md:items-center>
+      <!-- eslint-disable -->
+        <span opacity70 mr3>生日: {{ new Date(data.data.profile.birthday as number).toLocaleDateString() }}</span>
+        <span opacity70 mr3 md:mr0>ID: {{ data.data.profile.userId }}</span>
+        <NDivider class="my2!" :vertical="width > 768 ? true : false" />
+        <span opacity70 flex items-center gap1>
+          {{ data.data.profile.signature }}
+          <button scale btn-gray rounded-full p1><div text-size-2.5 i-ph-pencil-simple-line-duotone /></button>
+        </span>
+    </section>
+
+    <section></section>
   </div>
 </template>

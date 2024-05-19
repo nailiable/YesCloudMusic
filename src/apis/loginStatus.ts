@@ -26,6 +26,7 @@ export const LoginStatusDataSchema = z.object({
     lastLoginIP: z.string(),
     lastLoginTime: z.number(),
     birthday: z.number().nullable(),
+    signature: z.string().nullable(),
   }),
 })
 
@@ -52,6 +53,7 @@ export function useLoginStatus(immediate: boolean = false) {
             lastLoginIP: '',
             lastLoginTime: 0,
             birthday: null,
+            signature: '',
           },
         },
       },

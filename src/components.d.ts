@@ -10,6 +10,7 @@ declare module 'vue' {
     FormItem: typeof import('./components/FormItem.vue')['default']
     HoverImage: typeof import('./components/HoverImage.vue')['default']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NDivider: typeof import('naive-ui')['NDivider']
     NEmpty: typeof import('naive-ui')['NEmpty']
     NFormItem: typeof import('naive-ui')['NFormItem']
     NMessageProvider: typeof import('naive-ui')['NMessageProvider']
