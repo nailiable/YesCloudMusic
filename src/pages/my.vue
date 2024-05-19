@@ -1,9 +1,12 @@
 <script setup lang="tsx">
+const progress = useProgress()
 const userStore = useUserStore()
 const router = useRouter()
 const message = useMessage()
 const { t } = useI18n()
-const { data } = useLoginStatus(true)
+
+const { data, onComplete } = useLoginStatus(true)
+onComplete(() => progress.done())
 
 if (!userStore.currentUser || Object.keys(userStore.users).length === 0) {
   message.warning(t('my.please-login'))
