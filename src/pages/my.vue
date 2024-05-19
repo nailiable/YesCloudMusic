@@ -22,7 +22,7 @@ if (!userStore.currentUser || Object.keys(userStore.users).length === 0) {
         {{ $t("my.hello") }}
         {{ data.data.profile.nickname }}
       </h1>
-      <img max-w-18 rounded-full md:max-w-15 active:animate-bounce-alt :src="data.data.profile.avatarUrl">
+      <img max-w-18 rounded-full smooth md:max-w-15 active:animate-bounce-alt :src="data.data.profile.avatarUrl">
     </div>
     <!-- 个人信息 -->
     <div id="info" flex flex-col gap5>
