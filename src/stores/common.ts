@@ -11,7 +11,7 @@ export const useCommonStore = defineStore('yes_cloud_music_common_store', () => 
   }
 
   const servers = ref<CommonStoreServer>({
-    默认源: 'https://server.xhhzs.cn',
+    默认源默认源默认源默认源默认源默认源默认源默认源默认源默认源默认源默认源默认源默认源默认源默认源默认源默认源: 'https://server.xhhzs.cnhttps://server.xhhzs.cnhttps://server.xhhzs.cnhttps://server.xhhzs.cnhttps://server.xhhzs.cnhttps://server.xhhzs.cnhttps://server.xhhzs.cnhttps://server.xhhzs.cnhttps://server.xhhzs.cnhttps://server.xhhzs.cn',
   })
   const currentServer = ref<keyof CommonStoreServer | null>(null)
   const addServer = (serverName: string, serverUrl: string) => {

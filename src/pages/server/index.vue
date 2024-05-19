@@ -52,13 +52,21 @@ const editableViewState = reactive({
 
     <!-- 这才是真正的服务器列表 -->
     <div w-full flex justify-center mt10>
-      <div v-for="(address, name) in store.servers" :key="name">
-        <div w-full border="1px solid black/10 dark:white/10" pr10 pl8 py3 rounded-lg flex flex-col>
+      <div
+        border="none"
+        border-b="1px solid black/10 dark:white/10"
+        w-full flex justify-center items-center
+        md:border="1px solid black/10 dark:white/10" p="md:x7 y4"
+        md:rounded-lg gap5
+        v-for="(address, name) in store.servers" :key="name"
+      >
+          <div flex flex-col>
+            <div class="wrap" font-900 text-size-lg>{{ name }}</div>
+            <div class="wrap opacity-60">{{ address }}</div>
+          </div>
           <button btn scale btn-gray rounded-full p3 type="button" @click="store.removeServer(name as string)">
             <div i-ph-trash-duotone />
-            {{ address }}
           </button>
-        </div>
       </div>
     </div>
 
@@ -76,3 +84,9 @@ const editableViewState = reactive({
 meta:
   layout: blank
 </route>
+
+<style lang="less" scoped>
+.wrap {
+  overflow-wrap: anywhere;
+}
+</style>
