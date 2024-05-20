@@ -15,6 +15,7 @@ export const PlaylistTrackAllSongsSchema = z.object({
   ar: z.array(PlaylistTrackAllSongsArSchema).default([]),
   al: PlaylistTrackAllSongsAlSchema.default({}),
   dt: z.number().default(0),
+  id: z.number().default(0),
 })
 
 export const PlaylistTrackAllSchema = z.object({

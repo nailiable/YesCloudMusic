@@ -18,6 +18,10 @@ declare global {
   const PlaylistTrackAllSongsAlSchema: typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsAlSchema']
   const PlaylistTrackAllSongsArSchema: typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsArSchema']
   const PlaylistTrackAllSongsSchema: typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsSchema']
+  const SongDetailSchema: typeof import('./apis/SongDetail')['SongDetailSchema']
+  const SongDetailSongsAlSchema: typeof import('./apis/SongDetail')['SongDetailSongsAlSchema']
+  const SongDetailSongsArSchema: typeof import('./apis/SongDetail')['SongDetailSongsArSchema']
+  const SongDetailSongsSchema: typeof import('./apis/SongDetail')['SongDetailSongsSchema']
   const SongUrlDataItemSchema: typeof import('./apis/songUrlV1')['SongUrlDataItemSchema']
   const SongUrlSchema: typeof import('./apis/songUrlV1')['SongUrlSchema']
   const TopArtistArtistsSchema: typeof import('./apis/topArtists')['TopArtistArtistsSchema']
@@ -266,6 +270,7 @@ declare global {
   const useRafFn: typeof import('@vueuse/core')['useRafFn']
   const useRefHistory: typeof import('@vueuse/core')['useRefHistory']
   const useResizeObserver: typeof import('@vueuse/core')['useResizeObserver']
+  const useRetry: typeof import('./composables/retry')['useRetry']
   const useRoute: typeof import('vue-router/auto')['useRoute']
   const useRouter: typeof import('vue-router/auto')['useRouter']
   const useScreenOrientation: typeof import('@vueuse/core')['useScreenOrientation']
@@ -277,7 +282,12 @@ declare global {
   const useSessionStorage: typeof import('@vueuse/core')['useSessionStorage']
   const useShare: typeof import('@vueuse/core')['useShare']
   const useSlots: typeof import('vue')['useSlots']
+  const useSongDetail: typeof import('./apis/SongDetail')['useSongDetail']
+  const useSongDetailDefaultValue: typeof import('./apis/SongDetail')['useSongDetailDefaultValue']
+  const useSongDetailInstance: typeof import('./apis/SongDetail')['useSongDetailInstance']
   const useSongUrl: typeof import('./apis/songUrlV1')['useSongUrl']
+  const useSongUrlDefaultValue: typeof import('./apis/songUrlV1')['useSongUrlDefaultValue']
+  const useSongUrlInstance: typeof import('./apis/songUrlV1')['useSongUrlInstance']
   const useSongUrlV1: typeof import('./apis/songUrlV1')['useSongUrlV1']
   const useSorted: typeof import('@vueuse/core')['useSorted']
   const useSpeechRecognition: typeof import('@vueuse/core')['useSpeechRecognition']
@@ -364,6 +374,10 @@ declare module 'vue' {
     readonly PlaylistTrackAllSongsAlSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsAlSchema']>
     readonly PlaylistTrackAllSongsArSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsArSchema']>
     readonly PlaylistTrackAllSongsSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsSchema']>
+    readonly SongDetailSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSchema']>
+    readonly SongDetailSongsAlSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSongsAlSchema']>
+    readonly SongDetailSongsArSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSongsArSchema']>
+    readonly SongDetailSongsSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSongsSchema']>
     readonly SongUrlDataItemSchema: UnwrapRef<typeof import('./apis/songUrlV1')['SongUrlDataItemSchema']>
     readonly SongUrlSchema: UnwrapRef<typeof import('./apis/songUrlV1')['SongUrlSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
@@ -612,6 +626,7 @@ declare module 'vue' {
     readonly useRafFn: UnwrapRef<typeof import('@vueuse/core')['useRafFn']>
     readonly useRefHistory: UnwrapRef<typeof import('@vueuse/core')['useRefHistory']>
     readonly useResizeObserver: UnwrapRef<typeof import('@vueuse/core')['useResizeObserver']>
+    readonly useRetry: UnwrapRef<typeof import('./composables/retry')['useRetry']>
     readonly useRoute: UnwrapRef<typeof import('vue-router/auto')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router/auto')['useRouter']>
     readonly useScreenOrientation: UnwrapRef<typeof import('@vueuse/core')['useScreenOrientation']>
@@ -623,7 +638,12 @@ declare module 'vue' {
     readonly useSessionStorage: UnwrapRef<typeof import('@vueuse/core')['useSessionStorage']>
     readonly useShare: UnwrapRef<typeof import('@vueuse/core')['useShare']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly useSongDetail: UnwrapRef<typeof import('./apis/SongDetail')['useSongDetail']>
+    readonly useSongDetailDefaultValue: UnwrapRef<typeof import('./apis/SongDetail')['useSongDetailDefaultValue']>
+    readonly useSongDetailInstance: UnwrapRef<typeof import('./apis/SongDetail')['useSongDetailInstance']>
     readonly useSongUrl: UnwrapRef<typeof import('./apis/songUrlV1')['useSongUrl']>
+    readonly useSongUrlDefaultValue: UnwrapRef<typeof import('./apis/songUrlV1')['useSongUrlDefaultValue']>
+    readonly useSongUrlInstance: UnwrapRef<typeof import('./apis/songUrlV1')['useSongUrlInstance']>
     readonly useSorted: UnwrapRef<typeof import('@vueuse/core')['useSorted']>
     readonly useSpeechRecognition: UnwrapRef<typeof import('@vueuse/core')['useSpeechRecognition']>
     readonly useSpeechSynthesis: UnwrapRef<typeof import('@vueuse/core')['useSpeechSynthesis']>
@@ -702,6 +722,10 @@ declare module '@vue/runtime-core' {
     readonly PlaylistTrackAllSongsAlSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsAlSchema']>
     readonly PlaylistTrackAllSongsArSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsArSchema']>
     readonly PlaylistTrackAllSongsSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsSchema']>
+    readonly SongDetailSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSchema']>
+    readonly SongDetailSongsAlSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSongsAlSchema']>
+    readonly SongDetailSongsArSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSongsArSchema']>
+    readonly SongDetailSongsSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSongsSchema']>
     readonly SongUrlDataItemSchema: UnwrapRef<typeof import('./apis/songUrlV1')['SongUrlDataItemSchema']>
     readonly SongUrlSchema: UnwrapRef<typeof import('./apis/songUrlV1')['SongUrlSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
@@ -950,6 +974,7 @@ declare module '@vue/runtime-core' {
     readonly useRafFn: UnwrapRef<typeof import('@vueuse/core')['useRafFn']>
     readonly useRefHistory: UnwrapRef<typeof import('@vueuse/core')['useRefHistory']>
     readonly useResizeObserver: UnwrapRef<typeof import('@vueuse/core')['useResizeObserver']>
+    readonly useRetry: UnwrapRef<typeof import('./composables/retry')['useRetry']>
     readonly useRoute: UnwrapRef<typeof import('vue-router/auto')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router/auto')['useRouter']>
     readonly useScreenOrientation: UnwrapRef<typeof import('@vueuse/core')['useScreenOrientation']>
@@ -961,7 +986,12 @@ declare module '@vue/runtime-core' {
     readonly useSessionStorage: UnwrapRef<typeof import('@vueuse/core')['useSessionStorage']>
     readonly useShare: UnwrapRef<typeof import('@vueuse/core')['useShare']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly useSongDetail: UnwrapRef<typeof import('./apis/SongDetail')['useSongDetail']>
+    readonly useSongDetailDefaultValue: UnwrapRef<typeof import('./apis/SongDetail')['useSongDetailDefaultValue']>
+    readonly useSongDetailInstance: UnwrapRef<typeof import('./apis/SongDetail')['useSongDetailInstance']>
     readonly useSongUrl: UnwrapRef<typeof import('./apis/songUrlV1')['useSongUrl']>
+    readonly useSongUrlDefaultValue: UnwrapRef<typeof import('./apis/songUrlV1')['useSongUrlDefaultValue']>
+    readonly useSongUrlInstance: UnwrapRef<typeof import('./apis/songUrlV1')['useSongUrlInstance']>
     readonly useSorted: UnwrapRef<typeof import('@vueuse/core')['useSorted']>
     readonly useSpeechRecognition: UnwrapRef<typeof import('@vueuse/core')['useSpeechRecognition']>
     readonly useSpeechSynthesis: UnwrapRef<typeof import('@vueuse/core')['useSpeechSynthesis']>

@@ -10,6 +10,7 @@ export default antfu(
     rules: {
       'no-useless-return': 'off',
       'eslint-comments/no-unlimited-disable': 'off',
+      'no-console': 'off',
     },
   },
 )

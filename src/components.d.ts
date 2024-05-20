@@ -19,10 +19,12 @@ declare module 'vue' {
     NTab: typeof import('naive-ui')['NTab']
     NTabs: typeof import('naive-ui')['NTabs']
     NTooltip: typeof import('naive-ui')['NTooltip']
+    OldPlayer: typeof import('./components/OldPlayer.vue')['default']
     PlayerModal: typeof import('./components/PlayerModal.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SearchModal: typeof import('./components/SearchModal.vue')['default']
+    Slider: typeof import('./components/Slider.vue')['default']
     SongListCard: typeof import('./components/SongListCard.vue')['default']
   }
 }

@@ -2,6 +2,7 @@
 const id = useNumberRoute('id')
 const { data: playListDetail } = usePlaylistDetail(true, id)
 const { data: playListTrackList } = usePlaylistTrackAll(true, id)
+const musicStore = useMusicStore()
 
 function formatTime(Milliseconds: number, format = 'HH:MM:SS') {
   const time = new Date(Milliseconds)
@@ -12,6 +13,14 @@ function formatTime(Milliseconds: number, format = 'HH:MM:SS') {
     .replace('HH', String(hours).padStart(2, '0'))
     .replace('MM', String(minutes).padStart(2, '0'))
     .replace('SS', String(seconds).padStart(2, '0'))
+}
+
+function playAll() {
+  musicStore.musicList = []
+  playListTrackList.value.songs.forEach((song) => {
+    musicStore.musicList.push(song.id)
+  })
+  musicStore.currentMusic = playListTrackList.value.songs[0].id
 }
 </script>
 
@@ -39,7 +48,7 @@ function formatTime(Milliseconds: number, format = 'HH:MM:SS') {
           <NTooltip>
             点击播放，会替换当前播放列表
             <template #trigger>
-              <button flex items-center gap2 btn scale btn-primary>
+              <button flex items-center gap2 btn scale btn-primary @click="playAll">
                 <div i-ph-play />
                 播放
               </button>
