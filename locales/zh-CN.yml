@@ -29,6 +29,14 @@ setting:
 my:
   please-login: 请先登录
   hello: 你好,
+  birthday: 生日
+  growth-point: 成长值
+  vip-expire-time: VIP过期时间
+  vip-expired: 已过期
+  vip-no-expire: 未过期
+  gender-unknown: 保密
+  gender-man: 男
+  gender-woman: 女
   login:
     name: 登录
     phone: 手机号

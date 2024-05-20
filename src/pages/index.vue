@@ -20,7 +20,7 @@ const { loading: TopArtistsLoading, data: TopArtistsData } = useTopArtists(true,
         <NSpin :show="PersonalizedLoading" :description="$t('home.listen-now-loading')">
           <div grid grid-cols-2 gap3 lg:grid-cols-6 md:grid-cols-4 lg:gap6 md:gap5>
             <div v-for="(item, index) in PersonalizedData.result" :key="index" class="song-list-item">
-              <SongListCard :title="item.name" :src="item.picUrl" />
+              <SongListCard :title="item.name" :src="item.picUrl" @click="$router.push('/song-list/item' + '?id=' + item.id)" />
             </div>
           </div>
         </NSpin>

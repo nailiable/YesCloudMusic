@@ -15,6 +15,7 @@ declare module 'vue' {
     NFormItem: typeof import('naive-ui')['NFormItem']
     NMessageProvider: typeof import('naive-ui')['NMessageProvider']
     NSpin: typeof import('naive-ui')['NSpin']
+    NTooltip: typeof import('naive-ui')['NTooltip']
     PlayerModal: typeof import('./components/PlayerModal.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

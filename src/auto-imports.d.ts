@@ -12,8 +12,13 @@ declare global {
   const LoginStatusSchema: typeof import('./apis/loginStatus')['LoginStatusSchema']
   const PersonalizedResultSchema: typeof import('./apis/personalized')['PersonalizedResultSchema']
   const PersonalizedSchema: typeof import('./apis/personalized')['PersonalizedSchema']
+  const PlaylistDetailPlaylistSchema: typeof import('./apis/playlistDetail')['PlaylistDetailPlaylistSchema']
+  const PlaylistDetailSchema: typeof import('./apis/playlistDetail')['PlaylistDetailSchema']
   const TopArtistArtistsSchema: typeof import('./apis/topArtists')['TopArtistArtistsSchema']
   const TopArtistSchema: typeof import('./apis/topArtists')['TopArtistSchema']
+  const UserPlayListItemCreatorSchema: typeof import('./apis/userPlaylist')['UserPlayListItemCreatorSchema']
+  const UserPlayListItemSchema: typeof import('./apis/userPlaylist')['UserPlayListItemSchema']
+  const UserPlayListSchema: typeof import('./apis/userPlaylist')['UserPlayListSchema']
   const VipGrowthPointDataLevelCardSchema: typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataLevelCardSchema']
   const VipGrowthPointDataSchema: typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataSchema']
   const VipGrowthPointDataUserLevelSchema: typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataUserLevelSchema']
@@ -48,6 +53,7 @@ declare global {
   const discreteApi: typeof import('./composables/discrete')['discreteApi']
   const eagerComputed: typeof import('@vueuse/core')['eagerComputed']
   const effectScope: typeof import('vue')['effectScope']
+  const export: typeof import('./apis/userPlaylist')['export']
   const extendRef: typeof import('@vueuse/core')['extendRef']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
@@ -228,6 +234,8 @@ declare global {
   const useNetwork: typeof import('@vueuse/core')['useNetwork']
   const useNotification: typeof import('naive-ui')['useNotification']
   const useNow: typeof import('@vueuse/core')['useNow']
+  const useNumberRoute: typeof import('./composables/numberRoute')['useNumberRoute']
+  const useNumberRouter: typeof import('./composables/useQuery')['useNumberRouter']
   const useObjectUrl: typeof import('@vueuse/core')['useObjectUrl']
   const useOffsetPagination: typeof import('@vueuse/core')['useOffsetPagination']
   const useOnline: typeof import('@vueuse/core')['useOnline']
@@ -237,6 +245,7 @@ declare global {
   const usePerformanceObserver: typeof import('@vueuse/core')['usePerformanceObserver']
   const usePermission: typeof import('@vueuse/core')['usePermission']
   const usePersonalized: typeof import('./apis/personalized')['usePersonalized']
+  const usePlaylistDetail: typeof import('./apis/playlistDetail')['usePlaylistDetail']
   const usePointer: typeof import('@vueuse/core')['usePointer']
   const usePointerLock: typeof import('@vueuse/core')['usePointerLock']
   const usePointerSwipe: typeof import('@vueuse/core')['usePointerSwipe']
@@ -252,6 +261,8 @@ declare global {
   const useResizeObserver: typeof import('@vueuse/core')['useResizeObserver']
   const useRoute: typeof import('vue-router/auto')['useRoute']
   const useRouter: typeof import('vue-router/auto')['useRouter']
+  const useRouterMessage: typeof import('./composables/useQuery')['useRouterMessage']
+  const useRouterQuery: typeof import('./composables/useQuery')['useRouterQuery']
   const useScreenOrientation: typeof import('@vueuse/core')['useScreenOrientation']
   const useScreenSafeArea: typeof import('@vueuse/core')['useScreenSafeArea']
   const useScriptTag: typeof import('@vueuse/core')['useScriptTag']
@@ -290,6 +301,7 @@ declare global {
   const useTransition: typeof import('@vueuse/core')['useTransition']
   const useUrlSearchParams: typeof import('@vueuse/core')['useUrlSearchParams']
   const useUserMedia: typeof import('@vueuse/core')['useUserMedia']
+  const useUserPlayList: typeof import('./apis/userPlaylist')['useUserPlayList']
   const useUserStore: typeof import('./stores/user')['useUserStore']
   const useVModel: typeof import('@vueuse/core')['useVModel']
   const useVModels: typeof import('@vueuse/core')['useVModels']
@@ -341,8 +353,13 @@ declare module 'vue' {
     readonly LoginStatusSchema: UnwrapRef<typeof import('./apis/loginStatus')['LoginStatusSchema']>
     readonly PersonalizedResultSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedResultSchema']>
     readonly PersonalizedSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedSchema']>
+    readonly PlaylistDetailPlaylistSchema: UnwrapRef<typeof import('./apis/playlistDetail')['PlaylistDetailPlaylistSchema']>
+    readonly PlaylistDetailSchema: UnwrapRef<typeof import('./apis/playlistDetail')['PlaylistDetailSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
     readonly TopArtistSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistSchema']>
+    readonly UserPlayListItemCreatorSchema: UnwrapRef<typeof import('./apis/userPlaylist')['UserPlayListItemCreatorSchema']>
+    readonly UserPlayListItemSchema: UnwrapRef<typeof import('./apis/userPlaylist')['UserPlayListItemSchema']>
+    readonly UserPlayListSchema: UnwrapRef<typeof import('./apis/userPlaylist')['UserPlayListSchema']>
     readonly VipGrowthPointDataLevelCardSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataLevelCardSchema']>
     readonly VipGrowthPointDataSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataSchema']>
     readonly VipGrowthPointDataUserLevelSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataUserLevelSchema']>
@@ -557,6 +574,7 @@ declare module 'vue' {
     readonly useNetwork: UnwrapRef<typeof import('@vueuse/core')['useNetwork']>
     readonly useNotification: UnwrapRef<typeof import('naive-ui')['useNotification']>
     readonly useNow: UnwrapRef<typeof import('@vueuse/core')['useNow']>
+    readonly useNumberRoute: UnwrapRef<typeof import('./composables/numberRoute')['useNumberRoute']>
     readonly useObjectUrl: UnwrapRef<typeof import('@vueuse/core')['useObjectUrl']>
     readonly useOffsetPagination: UnwrapRef<typeof import('@vueuse/core')['useOffsetPagination']>
     readonly useOnline: UnwrapRef<typeof import('@vueuse/core')['useOnline']>
@@ -566,6 +584,7 @@ declare module 'vue' {
     readonly usePerformanceObserver: UnwrapRef<typeof import('@vueuse/core')['usePerformanceObserver']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
     readonly usePersonalized: UnwrapRef<typeof import('./apis/personalized')['usePersonalized']>
+    readonly usePlaylistDetail: UnwrapRef<typeof import('./apis/playlistDetail')['usePlaylistDetail']>
     readonly usePointer: UnwrapRef<typeof import('@vueuse/core')['usePointer']>
     readonly usePointerLock: UnwrapRef<typeof import('@vueuse/core')['usePointerLock']>
     readonly usePointerSwipe: UnwrapRef<typeof import('@vueuse/core')['usePointerSwipe']>
@@ -619,6 +638,7 @@ declare module 'vue' {
     readonly useTransition: UnwrapRef<typeof import('@vueuse/core')['useTransition']>
     readonly useUrlSearchParams: UnwrapRef<typeof import('@vueuse/core')['useUrlSearchParams']>
     readonly useUserMedia: UnwrapRef<typeof import('@vueuse/core')['useUserMedia']>
+    readonly useUserPlayList: UnwrapRef<typeof import('./apis/userPlaylist')['useUserPlayList']>
     readonly useUserStore: UnwrapRef<typeof import('./stores/user')['useUserStore']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
@@ -661,8 +681,13 @@ declare module '@vue/runtime-core' {
     readonly LoginStatusSchema: UnwrapRef<typeof import('./apis/loginStatus')['LoginStatusSchema']>
     readonly PersonalizedResultSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedResultSchema']>
     readonly PersonalizedSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedSchema']>
+    readonly PlaylistDetailPlaylistSchema: UnwrapRef<typeof import('./apis/playlistDetail')['PlaylistDetailPlaylistSchema']>
+    readonly PlaylistDetailSchema: UnwrapRef<typeof import('./apis/playlistDetail')['PlaylistDetailSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
     readonly TopArtistSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistSchema']>
+    readonly UserPlayListItemCreatorSchema: UnwrapRef<typeof import('./apis/userPlaylist')['UserPlayListItemCreatorSchema']>
+    readonly UserPlayListItemSchema: UnwrapRef<typeof import('./apis/userPlaylist')['UserPlayListItemSchema']>
+    readonly UserPlayListSchema: UnwrapRef<typeof import('./apis/userPlaylist')['UserPlayListSchema']>
     readonly VipGrowthPointDataLevelCardSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataLevelCardSchema']>
     readonly VipGrowthPointDataSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataSchema']>
     readonly VipGrowthPointDataUserLevelSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataUserLevelSchema']>
@@ -877,6 +902,7 @@ declare module '@vue/runtime-core' {
     readonly useNetwork: UnwrapRef<typeof import('@vueuse/core')['useNetwork']>
     readonly useNotification: UnwrapRef<typeof import('naive-ui')['useNotification']>
     readonly useNow: UnwrapRef<typeof import('@vueuse/core')['useNow']>
+    readonly useNumberRoute: UnwrapRef<typeof import('./composables/numberRoute')['useNumberRoute']>
     readonly useObjectUrl: UnwrapRef<typeof import('@vueuse/core')['useObjectUrl']>
     readonly useOffsetPagination: UnwrapRef<typeof import('@vueuse/core')['useOffsetPagination']>
     readonly useOnline: UnwrapRef<typeof import('@vueuse/core')['useOnline']>
@@ -886,6 +912,7 @@ declare module '@vue/runtime-core' {
     readonly usePerformanceObserver: UnwrapRef<typeof import('@vueuse/core')['usePerformanceObserver']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
     readonly usePersonalized: UnwrapRef<typeof import('./apis/personalized')['usePersonalized']>
+    readonly usePlaylistDetail: UnwrapRef<typeof import('./apis/playlistDetail')['usePlaylistDetail']>
     readonly usePointer: UnwrapRef<typeof import('@vueuse/core')['usePointer']>
     readonly usePointerLock: UnwrapRef<typeof import('@vueuse/core')['usePointerLock']>
     readonly usePointerSwipe: UnwrapRef<typeof import('@vueuse/core')['usePointerSwipe']>
@@ -939,6 +966,7 @@ declare module '@vue/runtime-core' {
     readonly useTransition: UnwrapRef<typeof import('@vueuse/core')['useTransition']>
     readonly useUrlSearchParams: UnwrapRef<typeof import('@vueuse/core')['useUrlSearchParams']>
     readonly useUserMedia: UnwrapRef<typeof import('@vueuse/core')['useUserMedia']>
+    readonly useUserPlayList: UnwrapRef<typeof import('./apis/userPlaylist')['useUserPlayList']>
     readonly useUserStore: UnwrapRef<typeof import('./stores/user')['useUserStore']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
