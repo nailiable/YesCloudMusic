@@ -14,6 +14,10 @@ declare global {
   const PersonalizedSchema: typeof import('./apis/personalized')['PersonalizedSchema']
   const TopArtistArtistsSchema: typeof import('./apis/topArtists')['TopArtistArtistsSchema']
   const TopArtistSchema: typeof import('./apis/topArtists')['TopArtistSchema']
+  const VipGrowthPointDataLevelCardSchema: typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataLevelCardSchema']
+  const VipGrowthPointDataSchema: typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataSchema']
+  const VipGrowthPointDataUserLevelSchema: typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataUserLevelSchema']
+  const VipGrowthPointSchema: typeof import('./apis/vipGrowthPoint')['VipGrowthPointSchema']
   const __DEV__: typeof import('./composables/env')['__DEV__']
   const alovaInstance: typeof import('./composables/alova')['alovaInstance']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
@@ -290,6 +294,7 @@ declare global {
   const useVModel: typeof import('@vueuse/core')['useVModel']
   const useVModels: typeof import('@vueuse/core')['useVModels']
   const useVibrate: typeof import('@vueuse/core')['useVibrate']
+  const useVipGrowthPoint: typeof import('./apis/vipGrowthPoint')['useVipGrowthPoint']
   const useVirtualList: typeof import('@vueuse/core')['useVirtualList']
   const useWakeLock: typeof import('@vueuse/core')['useWakeLock']
   const useWebNotification: typeof import('@vueuse/core')['useWebNotification']
@@ -299,6 +304,8 @@ declare global {
   const useWindowFocus: typeof import('@vueuse/core')['useWindowFocus']
   const useWindowScroll: typeof import('@vueuse/core')['useWindowScroll']
   const useWindowSize: typeof import('@vueuse/core')['useWindowSize']
+  const vipGrowPoint: typeof import('./apis/vipGrowthPoint')['vipGrowPoint']
+  const vipGrowthPoint: typeof import('./apis/vipGrowthPoint')['vipGrowthPoint']
   const watch: typeof import('vue')['watch']
   const watchArray: typeof import('@vueuse/core')['watchArray']
   const watchAtMost: typeof import('@vueuse/core')['watchAtMost']
@@ -336,6 +343,10 @@ declare module 'vue' {
     readonly PersonalizedSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
     readonly TopArtistSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistSchema']>
+    readonly VipGrowthPointDataLevelCardSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataLevelCardSchema']>
+    readonly VipGrowthPointDataSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataSchema']>
+    readonly VipGrowthPointDataUserLevelSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataUserLevelSchema']>
+    readonly VipGrowthPointSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointSchema']>
     readonly __DEV__: UnwrapRef<typeof import('./composables/env')['__DEV__']>
     readonly alovaInstance: UnwrapRef<typeof import('./composables/alova')['alovaInstance']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
@@ -612,6 +623,7 @@ declare module 'vue' {
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
     readonly useVibrate: UnwrapRef<typeof import('@vueuse/core')['useVibrate']>
+    readonly useVipGrowthPoint: UnwrapRef<typeof import('./apis/vipGrowthPoint')['useVipGrowthPoint']>
     readonly useVirtualList: UnwrapRef<typeof import('@vueuse/core')['useVirtualList']>
     readonly useWakeLock: UnwrapRef<typeof import('@vueuse/core')['useWakeLock']>
     readonly useWebNotification: UnwrapRef<typeof import('@vueuse/core')['useWebNotification']>
@@ -651,6 +663,10 @@ declare module '@vue/runtime-core' {
     readonly PersonalizedSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
     readonly TopArtistSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistSchema']>
+    readonly VipGrowthPointDataLevelCardSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataLevelCardSchema']>
+    readonly VipGrowthPointDataSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataSchema']>
+    readonly VipGrowthPointDataUserLevelSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataUserLevelSchema']>
+    readonly VipGrowthPointSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointSchema']>
     readonly __DEV__: UnwrapRef<typeof import('./composables/env')['__DEV__']>
     readonly alovaInstance: UnwrapRef<typeof import('./composables/alova')['alovaInstance']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
@@ -927,6 +943,7 @@ declare module '@vue/runtime-core' {
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
     readonly useVibrate: UnwrapRef<typeof import('@vueuse/core')['useVibrate']>
+    readonly useVipGrowthPoint: UnwrapRef<typeof import('./apis/vipGrowthPoint')['useVipGrowthPoint']>
     readonly useVirtualList: UnwrapRef<typeof import('@vueuse/core')['useVirtualList']>
     readonly useWakeLock: UnwrapRef<typeof import('@vueuse/core')['useWakeLock']>
     readonly useWebNotification: UnwrapRef<typeof import('@vueuse/core')['useWebNotification']>

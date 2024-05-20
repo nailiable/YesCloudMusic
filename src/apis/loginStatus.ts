@@ -27,6 +27,9 @@ export const LoginStatusDataSchema = z.object({
     lastLoginTime: z.number(),
     birthday: z.number().nullable(),
     signature: z.string().nullable(),
+    gender: z.union([z.literal(0), z.literal(1), z.literal(2)]).default(0),
+    province: z.number(),
+    city: z.number(),
   }),
 })
 
