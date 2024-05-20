@@ -51,6 +51,7 @@ function parseGender(gender: 0 | 1 | 2) {
             <div>{{ parseGender(loginStatus.data.profile.gender) }}</div>
           </div>
         </span>
+
         <span opacity70 mr3>成长值: {{ vipGrowthPoint.data.userLevel.growthPoint }}</span>
         <span opacity70 mr3>VIP过期时间: {{ new Date(vipGrowthPoint.data.userLevel.expireTime).toLocaleDateString() }}</span>
         <span opacity70 mr3 md:mr0>{{ vipGrowthPoint.data.userLevel.expireTime > new Date().getTime() ? '未过期': '已过期' }}</span>
