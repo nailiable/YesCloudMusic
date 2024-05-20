@@ -4,6 +4,7 @@ const userStore = useUserStore()
 const router = useRouter()
 const message = useMessage()
 const { t } = useI18n()
+const { data: userPlaylist } = useUserPlayList(true)
 
 const { data: loginStatus, onComplete: onLoginComplete } = useLoginStatus(true)
 const { data: vipGrowthPoint } = useVipGrowthPoint(true)
@@ -34,7 +35,7 @@ function parseGender(gender: 0 | 1 | 2) {
         </div>
         {{ loginStatus.data.profile.nickname }}
       </h1>
-      <img max-w-18 rounded-full smooth md:max-w-15 active:animate-bounce-alt :src="loginStatus.data.profile.avatarUrl">
+      <img max-w-18 rounded-full smooth md:max-w-20 active:animate-bounce-alt :src="loginStatus.data.profile.avatarUrl">
     </section>
 
     <!-- 个人信息 -->
@@ -61,6 +62,11 @@ function parseGender(gender: 0 | 1 | 2) {
         </span>
     </section>
 
-    <section></section>
+    <h2 title-4 md:title-2 mt10>歌单</h2>
+    <section grid mt4 grid-cols-2 gap3 lg:grid-cols-5 md:grid-cols-4 md:gap5>
+      <div flex flex-col gap2 v-for="(item, index) in userPlaylist.playlist" :key="index">
+        <SongListCard :src="item.coverImgUrl" :title="item.name" @click="$router.push('/song-list/item' + '?id=' + item.id)" />
+      </div>
+    </section>
   </div>
 </template>

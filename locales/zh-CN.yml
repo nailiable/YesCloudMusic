@@ -65,3 +65,8 @@ server:
 song-list:
   item:
     error-not-found-id: 参数错误
+
+category:
+  name: 分类
+
+developing: 功能正在开发中...

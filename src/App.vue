@@ -8,6 +8,7 @@ import OgImage from './assets/images/og-image.png'
 // they will be rendered correctly in the html results with vite-ssg
 
 const { locale } = useI18n()
+const musicStore = useMusicStore()
 
 useHead({
   title: `Yes Cloud Music`,
@@ -53,12 +54,31 @@ useHead({
 const theme = computed(() => isDark.value ? darkTheme : null)
 const showPlayer = ref(false)
 provide('showPlayer', showPlayer)
+
+const showSearch = ref(false)
+provide('showSearch', showSearch)
+
+const audio = ref<HTMLAudioElement | null>(null)
+const audioController = useMediaControls(audio)
+const { send, data } = useSongUrl(false, musicStore.currentMusic!)
+provide('audio', audio)
+provide('audioController', audioController)
+
+watch(() => musicStore.currentMusic, async () => {
+  if (musicStore.currentMusic) {
+    await send()
+    audio.value!.src = data.value.data[0].url
+    audioController.playing.value = true
+  }
+})
 </script>
 
 <template>
   <NConfigProvider :theme="theme" :locale="locale === 'en' ? null : zhCN" :theme-overrides="isDark ? NaiveDark : NaiveLight">
     <NMessageProvider>
+      <audio ref="audio" hidden />
       <PlayerModal v-model:show="showPlayer" />
+      <SearchModal v-model:show="showSearch" />
       <RouterView />
     </NMessageProvider>
   </NConfigProvider>

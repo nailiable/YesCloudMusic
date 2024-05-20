@@ -1,4 +1,4 @@
 {
-    "nodejs.typescript.rebuildOnChanges": true,
-    "toolchains": []
+  "nodejs.typescript.rebuildOnChanges": true,
+  "toolchains": []
 }

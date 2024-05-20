@@ -5,6 +5,7 @@
   "scripts": {
     "build": "vite-ssg build",
     "dev": "vite --port 3333",
+    "ppt": "pnpm -F ppt dev",
     "lint": "eslint . --fix",
     "preview": "vite preview",
     "preview-https": "serve dist",
@@ -18,9 +19,17 @@
   },
   "dependencies": {
     "@alova/adapter-axios": "^1.2.6",
+    "@applemusic-like-lyrics/vue": "^0.1.5",
     "@css-render/vue3-ssr": "^0.15.14",
     "@iconify-json/ph": "^1.1.13",
     "@naiable/utils": "^0.0.4",
+    "@pixi/app": "^7.4.2",
+    "@pixi/core": "^7.4.2",
+    "@pixi/display": "^7.4.2",
+    "@pixi/filter-blur": "^7.4.2",
+    "@pixi/filter-bulge-pinch": "^5.1.1",
+    "@pixi/filter-color-matrix": "^7.4.2",
+    "@pixi/sprite": "^7.4.2",
     "@types/cookie": "^0.6.0",
     "@unhead/vue": "^1.9.10",
     "@unocss/reset": "^0.60.2",
@@ -30,6 +39,8 @@
     "axios": "^1.6.8",
     "cookie": "^0.6.0",
     "js-cookie": "^3.0.5",
+    "jss": "^10.10.0",
+    "jss-preset-default": "^10.10.0",
     "less": "^4.2.0",
     "naive-ui": "^2.38.2",
     "nprogress": "^0.2.0",
@@ -65,6 +76,7 @@
     "lint-staged": "^15.2.2",
     "markdown-it-link-attributes": "^4.0.1",
     "pnpm": "^9.1.1",
+    "prettier-plugin-slidev": "^1.0.5",
     "rollup": "^4.17.2",
     "shiki": "^1.5.2",
     "simple-git-hooks": "^2.11.1",
@@ -93,6 +105,6 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*": "eslint --fix"
+    "*": "eslint . --fix"
   }
 }

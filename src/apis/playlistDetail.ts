@@ -7,7 +7,7 @@ export const PlaylistDetailPlaylistSchema = z.object({
   name: z.string().default(''),
   coverImgUrl: z.string().default(''),
   tags: z.array(z.string()).default([]),
-  description: z.string().default(''),
+  description: z.string().nullable().default(''),
   createTime: z.number().default(0),
   userId: z.number().default(0),
   playCount: z.number().default(0),
@@ -27,7 +27,7 @@ export function usePlaylistDetail(immediate: boolean = false, id: number) {
     }),
     {
       immediate,
-      initialData: PlaylistDetailSchema.parse({}),
+      initialData: PlaylistDetailSchema.default({}).parse({}),
     },
   )
 }

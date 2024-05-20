@@ -10,6 +10,9 @@ export const UserPlayListItemCreatorSchema = z.object({
 
 export const UserPlayListItemSchema = z.object({
   creator: UserPlayListItemCreatorSchema.default({}),
+  name: z.string().default(''),
+  coverImgUrl: z.string().default(''),
+  id: z.number().default(0),
 })
 
 export const UserPlayListSchema = z.object({

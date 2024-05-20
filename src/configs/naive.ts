@@ -14,6 +14,11 @@ export const NaiveLight = {
     boxShadowWarning: 'none',
     boxShadowError: 'none',
   },
+  Tabs: {
+    tabTextColorActiveBar: '#E26365FF',
+    tabTextColorHoverBar: '#E26365FF',
+    barColor: '#E26365FF',
+  },
 } satisfies GlobalThemeOverrides
 
 export const NaiveDark = {
@@ -36,5 +41,10 @@ export const NaiveDark = {
     boxShadowError: 'none',
     boxShadowWarning: 'none',
     boxShadowLoading: 'none',
+  },
+  Tabs: {
+    tabTextColorActiveBar: '#E26365FF',
+    tabTextColorHoverBar: '#E26365FF',
+    barColor: '#E26365FF',
   },
 } satisfies GlobalThemeOverrides

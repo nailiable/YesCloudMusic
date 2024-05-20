@@ -29,6 +29,14 @@ setting:
 my:
   please-login: Please login first
   hello: Hello,
+  birthday: Birthday
+  growth-point: Growth point
+  vip-expire-time: VIP expire time
+  vip-expired: Expired
+  vip-no-expire: Not expired
+  gender-unknown: Unknown
+  gender-man: Man
+  gender-woman: Woman
   login:
     name: Login
     phone: Phone
@@ -52,3 +60,8 @@ server:
   help:
     title: Help
     back: Back
+
+category:
+  name: Category
+
+developing: Developing...
