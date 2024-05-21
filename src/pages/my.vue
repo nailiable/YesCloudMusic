@@ -4,7 +4,7 @@ const userStore = useUserStore()
 const router = useRouter()
 const message = useMessage()
 const { t } = useI18n()
-const { width } = useWindowSize()
+const { data: userPlaylist } = useUserPlayList(true)
 
 const { data: loginStatus, onComplete: onLoginComplete } = useLoginStatus(true)
 const { data: vipGrowthPoint } = useVipGrowthPoint(true)
@@ -17,11 +17,11 @@ if (!userStore.currentUser || Object.keys(userStore.users).length === 0) {
 
 function parseGender(gender: 0 | 1 | 2) {
   if (gender === 0)
-    return '保密'
+    return t('my.gender-unknown')
   else if (gender === 1)
-    return '男'
+    return t('my.gender-man')
   else if (gender === 2)
-    return '女'
+    return t('my.gender-woman')
 }
 </script>
 
@@ -35,13 +35,13 @@ function parseGender(gender: 0 | 1 | 2) {
         </div>
         {{ loginStatus.data.profile.nickname }}
       </h1>
-      <img max-w-18 rounded-full smooth md:max-w-15 active:animate-bounce-alt :src="loginStatus.data.profile.avatarUrl">
+      <img max-w-18 rounded-full smooth md:max-w-20 active:animate-bounce-alt :src="loginStatus.data.profile.avatarUrl">
     </section>
 
     <!-- 个人信息 -->
     <section id="info" mt3>
       <!-- eslint-disable -->
-        <span opacity70 mr3>生日: {{ new Date(loginStatus.data.profile.birthday as number).toLocaleDateString() }}</span>
+        <span opacity70 mr3>{{ $t("my.birthday") }}: {{ new Date(loginStatus.data.profile.birthday as number).toLocaleDateString() }}</span>
         <span opacity70 mr3>ID: {{ loginStatus.data.profile.userId }}</span>
         <span opacity70 mr3 inline-block>
           <div flex items-center justify-center gap0.5 relative top-0.8>
@@ -51,17 +51,22 @@ function parseGender(gender: 0 | 1 | 2) {
             <div>{{ parseGender(loginStatus.data.profile.gender) }}</div>
           </div>
         </span>
-        <span opacity70 mr3>成长值: {{ vipGrowthPoint.data.userLevel.growthPoint }}</span>
-        <span opacity70 mr3>VIP过期时间: {{ new Date(vipGrowthPoint.data.userLevel.expireTime).toLocaleDateString() }}</span>
-        <span opacity70 mr3 md:mr0>{{ vipGrowthPoint.data.userLevel.expireTime > new Date().getTime() ? '未过期': '已过期' }}</span>
+        <span opacity70 mr3>{{ $t("my.growth-point") }}: {{ vipGrowthPoint.data.userLevel.growthPoint }}</span>
+        <span opacity70 mr3>{{ $t("my.vip-expire-time") }}: {{ new Date(vipGrowthPoint.data.userLevel.expireTime).toLocaleDateString() }}</span>
+        <span opacity70 mr3 md:mr0>{{ vipGrowthPoint.data.userLevel.expireTime > new Date().getTime() ? $t("my.vip-expired") : $t('my.vip-no-expire') }}</span>
         <img inline-block h-5 md:ml2 :src="vipGrowthPoint.data.levelCard.redVipImageUrl">
-        <NDivider class="my2!" :vertical="width > 768 ? true : false" />
+        <NDivider class="my2! md:hidden block" />
         <span opacity70 flex items-center gap1 inline-block>
           {{ loginStatus.data.profile.signature }}
           <button scale btn-gray rounded-full p1><div text-size-2.5 i-ph-pencil-simple-line-duotone /></button>
         </span>
     </section>
 
-    <section></section>
+    <h2 title-4 md:title-2 mt10>歌单</h2>
+    <section grid mt4 grid-cols-2 gap3 lg:grid-cols-5 md:grid-cols-4 md:gap5>
+      <div flex flex-col gap2 v-for="(item, index) in userPlaylist.playlist" :key="index">
+        <SongListCard :src="item.coverImgUrl" :title="item.name" @click="$router.push('/song-list/item' + '?id=' + item.id)" />
+      </div>
+    </section>
   </div>
 </template>

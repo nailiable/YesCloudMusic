@@ -12,8 +12,23 @@ declare global {
   const LoginStatusSchema: typeof import('./apis/loginStatus')['LoginStatusSchema']
   const PersonalizedResultSchema: typeof import('./apis/personalized')['PersonalizedResultSchema']
   const PersonalizedSchema: typeof import('./apis/personalized')['PersonalizedSchema']
+  const PlaylistDetailPlaylistSchema: typeof import('./apis/playlistDetail')['PlaylistDetailPlaylistSchema']
+  const PlaylistDetailSchema: typeof import('./apis/playlistDetail')['PlaylistDetailSchema']
+  const PlaylistTrackAllSchema: typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSchema']
+  const PlaylistTrackAllSongsAlSchema: typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsAlSchema']
+  const PlaylistTrackAllSongsArSchema: typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsArSchema']
+  const PlaylistTrackAllSongsSchema: typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsSchema']
+  const SongDetailSchema: typeof import('./apis/SongDetail')['SongDetailSchema']
+  const SongDetailSongsAlSchema: typeof import('./apis/SongDetail')['SongDetailSongsAlSchema']
+  const SongDetailSongsArSchema: typeof import('./apis/SongDetail')['SongDetailSongsArSchema']
+  const SongDetailSongsSchema: typeof import('./apis/SongDetail')['SongDetailSongsSchema']
+  const SongUrlDataItemSchema: typeof import('./apis/songUrlV1')['SongUrlDataItemSchema']
+  const SongUrlSchema: typeof import('./apis/songUrlV1')['SongUrlSchema']
   const TopArtistArtistsSchema: typeof import('./apis/topArtists')['TopArtistArtistsSchema']
   const TopArtistSchema: typeof import('./apis/topArtists')['TopArtistSchema']
+  const UserPlayListItemCreatorSchema: typeof import('./apis/userPlaylist')['UserPlayListItemCreatorSchema']
+  const UserPlayListItemSchema: typeof import('./apis/userPlaylist')['UserPlayListItemSchema']
+  const UserPlayListSchema: typeof import('./apis/userPlaylist')['UserPlayListSchema']
   const VipGrowthPointDataLevelCardSchema: typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataLevelCardSchema']
   const VipGrowthPointDataSchema: typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataSchema']
   const VipGrowthPointDataUserLevelSchema: typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataUserLevelSchema']
@@ -212,6 +227,7 @@ declare global {
   const useLocalStorage: typeof import('@vueuse/core')['useLocalStorage']
   const useLoginCellPhone: typeof import('./apis/loginCellphone')['useLoginCellPhone']
   const useLoginStatus: typeof import('./apis/loginStatus')['useLoginStatus']
+  const useLyric: typeof import('./apis/lyric')['useLyric']
   const useMagicKeys: typeof import('@vueuse/core')['useMagicKeys']
   const useManualRefHistory: typeof import('@vueuse/core')['useManualRefHistory']
   const useMediaControls: typeof import('@vueuse/core')['useMediaControls']
@@ -223,11 +239,13 @@ declare global {
   const useMouse: typeof import('@vueuse/core')['useMouse']
   const useMouseInElement: typeof import('@vueuse/core')['useMouseInElement']
   const useMousePressed: typeof import('@vueuse/core')['useMousePressed']
+  const useMusicStore: typeof import('./stores/music')['useMusicStore']
   const useMutationObserver: typeof import('@vueuse/core')['useMutationObserver']
   const useNavigatorLanguage: typeof import('@vueuse/core')['useNavigatorLanguage']
   const useNetwork: typeof import('@vueuse/core')['useNetwork']
   const useNotification: typeof import('naive-ui')['useNotification']
   const useNow: typeof import('@vueuse/core')['useNow']
+  const useNumberRoute: typeof import('./composables/numberRoute')['useNumberRoute']
   const useObjectUrl: typeof import('@vueuse/core')['useObjectUrl']
   const useOffsetPagination: typeof import('@vueuse/core')['useOffsetPagination']
   const useOnline: typeof import('@vueuse/core')['useOnline']
@@ -237,6 +255,9 @@ declare global {
   const usePerformanceObserver: typeof import('@vueuse/core')['usePerformanceObserver']
   const usePermission: typeof import('@vueuse/core')['usePermission']
   const usePersonalized: typeof import('./apis/personalized')['usePersonalized']
+  const usePlayMusicListDetail: typeof import('./composables/playerMusicList')['usePlayMusicListDetail']
+  const usePlaylistDetail: typeof import('./apis/playlistDetail')['usePlaylistDetail']
+  const usePlaylistTrackAll: typeof import('./apis/playlistTrackAll')['usePlaylistTrackAll']
   const usePointer: typeof import('@vueuse/core')['usePointer']
   const usePointerLock: typeof import('@vueuse/core')['usePointerLock']
   const usePointerSwipe: typeof import('@vueuse/core')['usePointerSwipe']
@@ -250,6 +271,7 @@ declare global {
   const useRafFn: typeof import('@vueuse/core')['useRafFn']
   const useRefHistory: typeof import('@vueuse/core')['useRefHistory']
   const useResizeObserver: typeof import('@vueuse/core')['useResizeObserver']
+  const useRetry: typeof import('./composables/retry')['useRetry']
   const useRoute: typeof import('vue-router/auto')['useRoute']
   const useRouter: typeof import('vue-router/auto')['useRouter']
   const useScreenOrientation: typeof import('@vueuse/core')['useScreenOrientation']
@@ -261,6 +283,13 @@ declare global {
   const useSessionStorage: typeof import('@vueuse/core')['useSessionStorage']
   const useShare: typeof import('@vueuse/core')['useShare']
   const useSlots: typeof import('vue')['useSlots']
+  const useSongDetail: typeof import('./apis/SongDetail')['useSongDetail']
+  const useSongDetailDefaultValue: typeof import('./apis/SongDetail')['useSongDetailDefaultValue']
+  const useSongDetailInstance: typeof import('./apis/SongDetail')['useSongDetailInstance']
+  const useSongUrl: typeof import('./apis/songUrlV1')['useSongUrl']
+  const useSongUrlDefaultValue: typeof import('./apis/songUrlV1')['useSongUrlDefaultValue']
+  const useSongUrlInstance: typeof import('./apis/songUrlV1')['useSongUrlInstance']
+  const useSongUrlV1: typeof import('./apis/songUrlV1')['useSongUrlV1']
   const useSorted: typeof import('@vueuse/core')['useSorted']
   const useSpeechRecognition: typeof import('@vueuse/core')['useSpeechRecognition']
   const useSpeechSynthesis: typeof import('@vueuse/core')['useSpeechSynthesis']
@@ -290,6 +319,7 @@ declare global {
   const useTransition: typeof import('@vueuse/core')['useTransition']
   const useUrlSearchParams: typeof import('@vueuse/core')['useUrlSearchParams']
   const useUserMedia: typeof import('@vueuse/core')['useUserMedia']
+  const useUserPlayList: typeof import('./apis/userPlaylist')['useUserPlayList']
   const useUserStore: typeof import('./stores/user')['useUserStore']
   const useVModel: typeof import('@vueuse/core')['useVModel']
   const useVModels: typeof import('@vueuse/core')['useVModels']
@@ -304,8 +334,6 @@ declare global {
   const useWindowFocus: typeof import('@vueuse/core')['useWindowFocus']
   const useWindowScroll: typeof import('@vueuse/core')['useWindowScroll']
   const useWindowSize: typeof import('@vueuse/core')['useWindowSize']
-  const vipGrowPoint: typeof import('./apis/vipGrowthPoint')['vipGrowPoint']
-  const vipGrowthPoint: typeof import('./apis/vipGrowthPoint')['vipGrowthPoint']
   const watch: typeof import('vue')['watch']
   const watchArray: typeof import('@vueuse/core')['watchArray']
   const watchAtMost: typeof import('@vueuse/core')['watchAtMost']
@@ -341,8 +369,23 @@ declare module 'vue' {
     readonly LoginStatusSchema: UnwrapRef<typeof import('./apis/loginStatus')['LoginStatusSchema']>
     readonly PersonalizedResultSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedResultSchema']>
     readonly PersonalizedSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedSchema']>
+    readonly PlaylistDetailPlaylistSchema: UnwrapRef<typeof import('./apis/playlistDetail')['PlaylistDetailPlaylistSchema']>
+    readonly PlaylistDetailSchema: UnwrapRef<typeof import('./apis/playlistDetail')['PlaylistDetailSchema']>
+    readonly PlaylistTrackAllSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSchema']>
+    readonly PlaylistTrackAllSongsAlSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsAlSchema']>
+    readonly PlaylistTrackAllSongsArSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsArSchema']>
+    readonly PlaylistTrackAllSongsSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsSchema']>
+    readonly SongDetailSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSchema']>
+    readonly SongDetailSongsAlSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSongsAlSchema']>
+    readonly SongDetailSongsArSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSongsArSchema']>
+    readonly SongDetailSongsSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSongsSchema']>
+    readonly SongUrlDataItemSchema: UnwrapRef<typeof import('./apis/songUrlV1')['SongUrlDataItemSchema']>
+    readonly SongUrlSchema: UnwrapRef<typeof import('./apis/songUrlV1')['SongUrlSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
     readonly TopArtistSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistSchema']>
+    readonly UserPlayListItemCreatorSchema: UnwrapRef<typeof import('./apis/userPlaylist')['UserPlayListItemCreatorSchema']>
+    readonly UserPlayListItemSchema: UnwrapRef<typeof import('./apis/userPlaylist')['UserPlayListItemSchema']>
+    readonly UserPlayListSchema: UnwrapRef<typeof import('./apis/userPlaylist')['UserPlayListSchema']>
     readonly VipGrowthPointDataLevelCardSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataLevelCardSchema']>
     readonly VipGrowthPointDataSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataSchema']>
     readonly VipGrowthPointDataUserLevelSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataUserLevelSchema']>
@@ -541,6 +584,7 @@ declare module 'vue' {
     readonly useLocalStorage: UnwrapRef<typeof import('@vueuse/core')['useLocalStorage']>
     readonly useLoginCellPhone: UnwrapRef<typeof import('./apis/loginCellphone')['useLoginCellPhone']>
     readonly useLoginStatus: UnwrapRef<typeof import('./apis/loginStatus')['useLoginStatus']>
+    readonly useLyric: UnwrapRef<typeof import('./apis/lyric')['useLyric']>
     readonly useMagicKeys: UnwrapRef<typeof import('@vueuse/core')['useMagicKeys']>
     readonly useManualRefHistory: UnwrapRef<typeof import('@vueuse/core')['useManualRefHistory']>
     readonly useMediaControls: UnwrapRef<typeof import('@vueuse/core')['useMediaControls']>
@@ -552,11 +596,13 @@ declare module 'vue' {
     readonly useMouse: UnwrapRef<typeof import('@vueuse/core')['useMouse']>
     readonly useMouseInElement: UnwrapRef<typeof import('@vueuse/core')['useMouseInElement']>
     readonly useMousePressed: UnwrapRef<typeof import('@vueuse/core')['useMousePressed']>
+    readonly useMusicStore: UnwrapRef<typeof import('./stores/music')['useMusicStore']>
     readonly useMutationObserver: UnwrapRef<typeof import('@vueuse/core')['useMutationObserver']>
     readonly useNavigatorLanguage: UnwrapRef<typeof import('@vueuse/core')['useNavigatorLanguage']>
     readonly useNetwork: UnwrapRef<typeof import('@vueuse/core')['useNetwork']>
     readonly useNotification: UnwrapRef<typeof import('naive-ui')['useNotification']>
     readonly useNow: UnwrapRef<typeof import('@vueuse/core')['useNow']>
+    readonly useNumberRoute: UnwrapRef<typeof import('./composables/numberRoute')['useNumberRoute']>
     readonly useObjectUrl: UnwrapRef<typeof import('@vueuse/core')['useObjectUrl']>
     readonly useOffsetPagination: UnwrapRef<typeof import('@vueuse/core')['useOffsetPagination']>
     readonly useOnline: UnwrapRef<typeof import('@vueuse/core')['useOnline']>
@@ -566,6 +612,9 @@ declare module 'vue' {
     readonly usePerformanceObserver: UnwrapRef<typeof import('@vueuse/core')['usePerformanceObserver']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
     readonly usePersonalized: UnwrapRef<typeof import('./apis/personalized')['usePersonalized']>
+    readonly usePlayMusicListDetail: UnwrapRef<typeof import('./composables/playerMusicList')['usePlayMusicListDetail']>
+    readonly usePlaylistDetail: UnwrapRef<typeof import('./apis/playlistDetail')['usePlaylistDetail']>
+    readonly usePlaylistTrackAll: UnwrapRef<typeof import('./apis/playlistTrackAll')['usePlaylistTrackAll']>
     readonly usePointer: UnwrapRef<typeof import('@vueuse/core')['usePointer']>
     readonly usePointerLock: UnwrapRef<typeof import('@vueuse/core')['usePointerLock']>
     readonly usePointerSwipe: UnwrapRef<typeof import('@vueuse/core')['usePointerSwipe']>
@@ -579,6 +628,7 @@ declare module 'vue' {
     readonly useRafFn: UnwrapRef<typeof import('@vueuse/core')['useRafFn']>
     readonly useRefHistory: UnwrapRef<typeof import('@vueuse/core')['useRefHistory']>
     readonly useResizeObserver: UnwrapRef<typeof import('@vueuse/core')['useResizeObserver']>
+    readonly useRetry: UnwrapRef<typeof import('./composables/retry')['useRetry']>
     readonly useRoute: UnwrapRef<typeof import('vue-router/auto')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router/auto')['useRouter']>
     readonly useScreenOrientation: UnwrapRef<typeof import('@vueuse/core')['useScreenOrientation']>
@@ -590,6 +640,12 @@ declare module 'vue' {
     readonly useSessionStorage: UnwrapRef<typeof import('@vueuse/core')['useSessionStorage']>
     readonly useShare: UnwrapRef<typeof import('@vueuse/core')['useShare']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly useSongDetail: UnwrapRef<typeof import('./apis/SongDetail')['useSongDetail']>
+    readonly useSongDetailDefaultValue: UnwrapRef<typeof import('./apis/SongDetail')['useSongDetailDefaultValue']>
+    readonly useSongDetailInstance: UnwrapRef<typeof import('./apis/SongDetail')['useSongDetailInstance']>
+    readonly useSongUrl: UnwrapRef<typeof import('./apis/songUrlV1')['useSongUrl']>
+    readonly useSongUrlDefaultValue: UnwrapRef<typeof import('./apis/songUrlV1')['useSongUrlDefaultValue']>
+    readonly useSongUrlInstance: UnwrapRef<typeof import('./apis/songUrlV1')['useSongUrlInstance']>
     readonly useSorted: UnwrapRef<typeof import('@vueuse/core')['useSorted']>
     readonly useSpeechRecognition: UnwrapRef<typeof import('@vueuse/core')['useSpeechRecognition']>
     readonly useSpeechSynthesis: UnwrapRef<typeof import('@vueuse/core')['useSpeechSynthesis']>
@@ -619,6 +675,7 @@ declare module 'vue' {
     readonly useTransition: UnwrapRef<typeof import('@vueuse/core')['useTransition']>
     readonly useUrlSearchParams: UnwrapRef<typeof import('@vueuse/core')['useUrlSearchParams']>
     readonly useUserMedia: UnwrapRef<typeof import('@vueuse/core')['useUserMedia']>
+    readonly useUserPlayList: UnwrapRef<typeof import('./apis/userPlaylist')['useUserPlayList']>
     readonly useUserStore: UnwrapRef<typeof import('./stores/user')['useUserStore']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
@@ -661,8 +718,23 @@ declare module '@vue/runtime-core' {
     readonly LoginStatusSchema: UnwrapRef<typeof import('./apis/loginStatus')['LoginStatusSchema']>
     readonly PersonalizedResultSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedResultSchema']>
     readonly PersonalizedSchema: UnwrapRef<typeof import('./apis/personalized')['PersonalizedSchema']>
+    readonly PlaylistDetailPlaylistSchema: UnwrapRef<typeof import('./apis/playlistDetail')['PlaylistDetailPlaylistSchema']>
+    readonly PlaylistDetailSchema: UnwrapRef<typeof import('./apis/playlistDetail')['PlaylistDetailSchema']>
+    readonly PlaylistTrackAllSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSchema']>
+    readonly PlaylistTrackAllSongsAlSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsAlSchema']>
+    readonly PlaylistTrackAllSongsArSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsArSchema']>
+    readonly PlaylistTrackAllSongsSchema: UnwrapRef<typeof import('./apis/playlistTrackAll')['PlaylistTrackAllSongsSchema']>
+    readonly SongDetailSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSchema']>
+    readonly SongDetailSongsAlSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSongsAlSchema']>
+    readonly SongDetailSongsArSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSongsArSchema']>
+    readonly SongDetailSongsSchema: UnwrapRef<typeof import('./apis/SongDetail')['SongDetailSongsSchema']>
+    readonly SongUrlDataItemSchema: UnwrapRef<typeof import('./apis/songUrlV1')['SongUrlDataItemSchema']>
+    readonly SongUrlSchema: UnwrapRef<typeof import('./apis/songUrlV1')['SongUrlSchema']>
     readonly TopArtistArtistsSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistArtistsSchema']>
     readonly TopArtistSchema: UnwrapRef<typeof import('./apis/topArtists')['TopArtistSchema']>
+    readonly UserPlayListItemCreatorSchema: UnwrapRef<typeof import('./apis/userPlaylist')['UserPlayListItemCreatorSchema']>
+    readonly UserPlayListItemSchema: UnwrapRef<typeof import('./apis/userPlaylist')['UserPlayListItemSchema']>
+    readonly UserPlayListSchema: UnwrapRef<typeof import('./apis/userPlaylist')['UserPlayListSchema']>
     readonly VipGrowthPointDataLevelCardSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataLevelCardSchema']>
     readonly VipGrowthPointDataSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataSchema']>
     readonly VipGrowthPointDataUserLevelSchema: UnwrapRef<typeof import('./apis/vipGrowthPoint')['VipGrowthPointDataUserLevelSchema']>
@@ -861,6 +933,7 @@ declare module '@vue/runtime-core' {
     readonly useLocalStorage: UnwrapRef<typeof import('@vueuse/core')['useLocalStorage']>
     readonly useLoginCellPhone: UnwrapRef<typeof import('./apis/loginCellphone')['useLoginCellPhone']>
     readonly useLoginStatus: UnwrapRef<typeof import('./apis/loginStatus')['useLoginStatus']>
+    readonly useLyric: UnwrapRef<typeof import('./apis/lyric')['useLyric']>
     readonly useMagicKeys: UnwrapRef<typeof import('@vueuse/core')['useMagicKeys']>
     readonly useManualRefHistory: UnwrapRef<typeof import('@vueuse/core')['useManualRefHistory']>
     readonly useMediaControls: UnwrapRef<typeof import('@vueuse/core')['useMediaControls']>
@@ -872,11 +945,13 @@ declare module '@vue/runtime-core' {
     readonly useMouse: UnwrapRef<typeof import('@vueuse/core')['useMouse']>
     readonly useMouseInElement: UnwrapRef<typeof import('@vueuse/core')['useMouseInElement']>
     readonly useMousePressed: UnwrapRef<typeof import('@vueuse/core')['useMousePressed']>
+    readonly useMusicStore: UnwrapRef<typeof import('./stores/music')['useMusicStore']>
     readonly useMutationObserver: UnwrapRef<typeof import('@vueuse/core')['useMutationObserver']>
     readonly useNavigatorLanguage: UnwrapRef<typeof import('@vueuse/core')['useNavigatorLanguage']>
     readonly useNetwork: UnwrapRef<typeof import('@vueuse/core')['useNetwork']>
     readonly useNotification: UnwrapRef<typeof import('naive-ui')['useNotification']>
     readonly useNow: UnwrapRef<typeof import('@vueuse/core')['useNow']>
+    readonly useNumberRoute: UnwrapRef<typeof import('./composables/numberRoute')['useNumberRoute']>
     readonly useObjectUrl: UnwrapRef<typeof import('@vueuse/core')['useObjectUrl']>
     readonly useOffsetPagination: UnwrapRef<typeof import('@vueuse/core')['useOffsetPagination']>
     readonly useOnline: UnwrapRef<typeof import('@vueuse/core')['useOnline']>
@@ -886,6 +961,9 @@ declare module '@vue/runtime-core' {
     readonly usePerformanceObserver: UnwrapRef<typeof import('@vueuse/core')['usePerformanceObserver']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
     readonly usePersonalized: UnwrapRef<typeof import('./apis/personalized')['usePersonalized']>
+    readonly usePlayMusicListDetail: UnwrapRef<typeof import('./composables/playerMusicList')['usePlayMusicListDetail']>
+    readonly usePlaylistDetail: UnwrapRef<typeof import('./apis/playlistDetail')['usePlaylistDetail']>
+    readonly usePlaylistTrackAll: UnwrapRef<typeof import('./apis/playlistTrackAll')['usePlaylistTrackAll']>
     readonly usePointer: UnwrapRef<typeof import('@vueuse/core')['usePointer']>
     readonly usePointerLock: UnwrapRef<typeof import('@vueuse/core')['usePointerLock']>
     readonly usePointerSwipe: UnwrapRef<typeof import('@vueuse/core')['usePointerSwipe']>
@@ -899,6 +977,7 @@ declare module '@vue/runtime-core' {
     readonly useRafFn: UnwrapRef<typeof import('@vueuse/core')['useRafFn']>
     readonly useRefHistory: UnwrapRef<typeof import('@vueuse/core')['useRefHistory']>
     readonly useResizeObserver: UnwrapRef<typeof import('@vueuse/core')['useResizeObserver']>
+    readonly useRetry: UnwrapRef<typeof import('./composables/retry')['useRetry']>
     readonly useRoute: UnwrapRef<typeof import('vue-router/auto')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router/auto')['useRouter']>
     readonly useScreenOrientation: UnwrapRef<typeof import('@vueuse/core')['useScreenOrientation']>
@@ -910,6 +989,12 @@ declare module '@vue/runtime-core' {
     readonly useSessionStorage: UnwrapRef<typeof import('@vueuse/core')['useSessionStorage']>
     readonly useShare: UnwrapRef<typeof import('@vueuse/core')['useShare']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly useSongDetail: UnwrapRef<typeof import('./apis/SongDetail')['useSongDetail']>
+    readonly useSongDetailDefaultValue: UnwrapRef<typeof import('./apis/SongDetail')['useSongDetailDefaultValue']>
+    readonly useSongDetailInstance: UnwrapRef<typeof import('./apis/SongDetail')['useSongDetailInstance']>
+    readonly useSongUrl: UnwrapRef<typeof import('./apis/songUrlV1')['useSongUrl']>
+    readonly useSongUrlDefaultValue: UnwrapRef<typeof import('./apis/songUrlV1')['useSongUrlDefaultValue']>
+    readonly useSongUrlInstance: UnwrapRef<typeof import('./apis/songUrlV1')['useSongUrlInstance']>
     readonly useSorted: UnwrapRef<typeof import('@vueuse/core')['useSorted']>
     readonly useSpeechRecognition: UnwrapRef<typeof import('@vueuse/core')['useSpeechRecognition']>
     readonly useSpeechSynthesis: UnwrapRef<typeof import('@vueuse/core')['useSpeechSynthesis']>
@@ -939,6 +1024,7 @@ declare module '@vue/runtime-core' {
     readonly useTransition: UnwrapRef<typeof import('@vueuse/core')['useTransition']>
     readonly useUrlSearchParams: UnwrapRef<typeof import('@vueuse/core')['useUrlSearchParams']>
     readonly useUserMedia: UnwrapRef<typeof import('@vueuse/core')['useUserMedia']>
+    readonly useUserPlayList: UnwrapRef<typeof import('./apis/userPlaylist')['useUserPlayList']>
     readonly useUserStore: UnwrapRef<typeof import('./stores/user')['useUserStore']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>

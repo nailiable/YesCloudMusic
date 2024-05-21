@@ -3,6 +3,8 @@ defineProps<{
   src?: string
   imageClass?: string
 }>()
+
+const { center } = useSlots()
 </script>
 
 <template>
@@ -10,7 +12,7 @@ defineProps<{
     <img class="hover-image" :src="src" :class="`relative z-1 rounded-lg object-cover smooth scale ${imageClass}`">
     <img class="hover-image-shadow" :src="src" :class="`absolute top-0 z-0 smooth hover:block ${imageClass}`">
 
-    <div pointer-events-none absolute top-0 z-1 h-full w-full flex items-center justify-center smooth>
+    <div v-if="center" pointer-events-none absolute top-0 z-1 h-full w-full flex items-center justify-center smooth>
       <slot name="center" />
     </div>
   </div>

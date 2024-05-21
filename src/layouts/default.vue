@@ -7,6 +7,8 @@ const route = useRoute()
 const { t, locale } = useI18n()
 const { y } = useWindowScroll()
 const showPlayer = inject<Ref<boolean>>('showPlayer')
+// TODO: 搜索做好了之后再取消注释
+// const showSearch = inject<Ref<boolean>>('showSearch')
 
 interface NavItem {
   icon: string
@@ -32,9 +34,15 @@ const currentLocation = computed(() => nav.value.find(item => item.to === route.
       :class="`pc-header ${y > 50 ? `bg-white/80 dark:bg-black/80` : ''}`"
       fixed left-0 top-0 z-99 hidden w-full items-center justify-between pb2 pt2.5 backdrop-blur-sm smooth md:flex p-safe
     >
-      <button id="music" z-9 rounded-full p2.5 scale btn-hover-gray @click="showPlayer = !showPlayer">
-        <div i-ph-music-note-duotone text-size-lg />
-      </button>
+      <div z-9>
+        <button rounded-full p2.5 scale btn-hover-gray @click="showPlayer = !showPlayer">
+          <div i-ph-music-note-duotone text-size-lg />
+        </button>
+        <!-- TODO: 搜索做好了之后再取消注释 -->
+        <!-- <button rounded-full p2.5 scale btn-hover-gray @click="showSearch = !showSearch">
+          <div i-ph-magnifying-glass-duotone text-size-lg />
+        </button> -->
+      </div>
       <nav class="pc-nav" absolute left-0 w-full flex items-center justify-center gap3 pb1>
         <button
           v-for="(item, index) in nav" :key="index"
@@ -70,7 +78,7 @@ const currentLocation = computed(() => nav.value.find(item => item.to === route.
           </button>
         </div>
         <!-- 开发环境，因为DEV Tools会占位置，所以稍微移上一丢丢 -->
-        <div :class="__DEV__ ? `top--9` : 'top--7'" relative rounded-full p3 smooth btn-primary>
+        <div :class="__DEV__ ? `top--9` : 'top--7'" relative rounded-full p3 smooth btn-primary @click="showPlayer = true">
           <div i-ph-music-note-duotone text-size-2xl />
         </div>
         <div v-for="(item, index) in [nav[2], nav[3]]" :key="index">
