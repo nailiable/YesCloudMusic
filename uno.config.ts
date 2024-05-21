@@ -51,6 +51,10 @@ export default defineConfig({
       'px5 lg:px20 md:px15',
     ],
     [
+      'p-safe-mini',
+      '2xl:px70 xl:px-40',
+    ],
+    [
       'title-1',
       'text-4xl font-bold',
     ],

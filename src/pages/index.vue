@@ -35,12 +35,10 @@ const { loading: TopArtistsLoading, data: TopArtistsData } = useTopArtists(true,
         </h2>
         <NSpin :show="TopArtistsLoading" :description="$t('home.listen-now-loading')">
           <div flex gap3 overflow-y-auto w-full h-full p1 lg:gap10>
-            <div v-for="(item, index) in TopArtistsData.artists" :key="index" class="min-w-30 h-full">
+            <div v-for="(item, index) in TopArtistsData.artists" :key="index" class="min-w-30 h-full" @click="$router.push('/artist/item' + '?id=' + item.id)">
               <SongListCard :title="item.name" :src="item.picUrl" image-class="rounded-full!">
                 <template #title="{ title }">
-                  <div text-center overflow-hidden text-truncate smooth active:opacity80 hover:opacity65>
-                    {{ title }}
-                  </div>
+                  <div text-center overflow-hidden text-truncate smooth active:opacity80 hover:opacity65>{{ title }}</div>
                 </template>
               </SongListCard>
             </div>
