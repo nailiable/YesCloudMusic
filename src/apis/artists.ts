@@ -8,6 +8,8 @@ export const ArtistsArtistSchema = z.object({
   img1v1Url: z.string().default(''),
   name: z.string().default(''),
   id: z.number().default(0),
+  musicSize: z.number().default(0),
+  albumSize: z.number().default(0),
 })
 
 export const ArtistsSchema = z.object({
