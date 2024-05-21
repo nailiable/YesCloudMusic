@@ -59,7 +59,12 @@ function playAll() {
     </div>
     <!-- 歌曲列表 -->
     <div flex-col flex mt10 gap1>
-      <div v-for="(item, index) in playListTrackList.songs" :key="index" flex justify-between cursor-pointer items-center p3 rounded-2xl>
+      <div
+        v-for="(item, index) in playListTrackList.songs" :key="index"
+        flex justify-between cursor-pointer items-center p3 rounded-2xl
+        :class="`${musicStore.currentMusic === item.id ? 'bg-red-500 text-white' : ''}`"
+        @click="musicStore.insertMusic(item.id)"
+      >
         <div flex items-center w-full gap3>
           <!-- <HoverImage class="w-auto min-w-0! max-w-20!" image-class="max-w-15! min-w-15!" :src="item.al.picUrl + '?param=50y50'" alt="封面" rounded-2xl min-w-50 /> -->
           <NImage scale :src="item.al.picUrl + '?param=50y50'" :preview-src="item.al.picUrl + '?param=500y500'" alt="封面" rounded-md />

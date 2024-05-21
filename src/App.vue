@@ -94,10 +94,24 @@ watch(() => musicStore.currentMusic, async () => {
 // 监听歌曲播放结束，自动播放下一首
 watch(audioController.ended, () => {
   if (!audioController.ended.value)
-    return console.log('歌曲未播放结束，不自动播放下一首')
-  console.log('歌曲播放结束，自动播放下一首')
-  audioController.currentTime.value = 0
-  musicStore.next()
+    return console.log('歌曲未播放结束，不进行任何操作')
+
+  if (musicStore.mode === 'loop') {
+    console.log('当前播放模式为列表循环，将自动播放下一首...')
+    console.log('歌曲播放结束，自动播放下一首')
+    musicStore.next()
+  }
+  else if (musicStore.mode === 'random') {
+    console.log('当前播放模式为随机播放，将自动播放下一首...')
+    console.log('歌曲播放结束，自动播放下一首')
+    const randomId = musicStore.getRandomMusic()
+    musicStore.currentMusic = randomId
+  }
+  else if (musicStore.mode === 'single') {
+    console.log('当前播放模式为单曲循环，将自动重新播放当前歌曲...')
+    console.log('歌曲播放结束，自动重新播放当前歌曲')
+    audioController.playing.value = true
+  }
 })
 </script>
 
