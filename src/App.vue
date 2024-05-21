@@ -75,24 +75,26 @@ provide('currentSongUrlData', songUrlData)
 // 监听当前歌曲变动，获取歌曲信息
 watch(() => musicStore.currentMusic, async () => {
   console.log('currentMusic发生变动，重新获取歌曲信息')
-  if (musicStore.currentMusic) {
-    console.log('currentMusic存在，开始获取歌曲信息')
-    const [urlInstance, detailInstance] = await Promise.all([
-      useSongUrlInstance(musicStore.currentMusic!).send(),
-      useSongDetailInstance(musicStore.currentMusic!).send(),
-    ])
-    songDetailData.value = detailInstance
-    songUrlData.value = urlInstance
-    if (urlInstance.data.length === 1) {
-      audio.value!.src = urlInstance.data[0].url
-      audioController.playing.value = true
-      console.log(`歌曲地址获取完毕，开始播放, 当前状态：${audioController.playing.value}`)
-    }
+  if (!musicStore.currentMusic)
+    return console.log('currentMusic不存在，无法获取歌曲信息, 停止播放')
+  console.log('currentMusic存在，开始获取歌曲信息')
+  const [urlInstance, detailInstance] = await Promise.all([
+    useSongUrlInstance(musicStore.currentMusic!).send(),
+    useSongDetailInstance(musicStore.currentMusic!).send(),
+  ])
+  songDetailData.value = detailInstance
+  songUrlData.value = urlInstance
+  if (urlInstance.data.length === 1) {
+    audio.value!.src = urlInstance.data[0].url
+    audioController.playing.value = true
+    console.log(`歌曲地址获取完毕，开始播放, 当前状态：${audioController.playing.value}`)
   }
 }, { immediate: true })
 
 // 监听歌曲播放结束，自动播放下一首
 watch(audioController.ended, () => {
+  if (!audioController.ended.value)
+    return console.log('歌曲未播放结束，不自动播放下一首')
   console.log('歌曲播放结束，自动播放下一首')
   audioController.currentTime.value = 0
   musicStore.next()

@@ -26,13 +26,18 @@ function formatDuration(seconds: number) {
     @click="emit('click')"
   >
     <!-- 封面 -->
-    <img v-if="showPlayerList" mt10 block h-full max-w-60 w-full rounded-t :src="`${currentSongDetailData.songs[0].al.picUrl}`">
+    <img v-show="showPlayerList" mt10 block h-full max-w-60 w-full rounded-t :src="`${currentSongDetailData.songs[0].al.picUrl}`">
     <!-- 播放列表 -->
-    <div v-else max-h-sm w-full flex flex-col overflow-y-auto class="player-list my5 px5">
+    <div v-show="!showPlayerList" max-h-sm w-full flex flex-col overflow-y-auto class="player-list my5 px5">
       <template v-for="(item, _index) in data.songs" :key="_index">
         <div flex cursor-pointer rounded-lg p1 px4 py4 :class="item.id === musicStore.currentMusic ? 'bg-black' : ''" @click="musicStore.currentMusic = item.id">
           <img :src="`${item.al.picUrl}?param=50y50`" class="mr-3 h-10 w-10 rounded-lg">
-          {{ item.name }}
+          <div flex flex-col>
+            <!-- eslint-disable -->
+            <div text-size-sm font-800>{{ item.name }}</div>
+            <!-- eslint-disable -->
+            <div opacity60>{{ item.ar.map((ar) => ar.name).join('/') }}</div>
+          </div>
         </div>
       </template>
     </div>

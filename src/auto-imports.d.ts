@@ -255,6 +255,7 @@ declare global {
   const usePerformanceObserver: typeof import('@vueuse/core')['usePerformanceObserver']
   const usePermission: typeof import('@vueuse/core')['usePermission']
   const usePersonalized: typeof import('./apis/personalized')['usePersonalized']
+  const usePlayMusicListDetail: typeof import('./composables/playerMusicList')['usePlayMusicListDetail']
   const usePlaylistDetail: typeof import('./apis/playlistDetail')['usePlaylistDetail']
   const usePlaylistTrackAll: typeof import('./apis/playlistTrackAll')['usePlaylistTrackAll']
   const usePointer: typeof import('@vueuse/core')['usePointer']
@@ -611,6 +612,7 @@ declare module 'vue' {
     readonly usePerformanceObserver: UnwrapRef<typeof import('@vueuse/core')['usePerformanceObserver']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
     readonly usePersonalized: UnwrapRef<typeof import('./apis/personalized')['usePersonalized']>
+    readonly usePlayMusicListDetail: UnwrapRef<typeof import('./composables/playerMusicList')['usePlayMusicListDetail']>
     readonly usePlaylistDetail: UnwrapRef<typeof import('./apis/playlistDetail')['usePlaylistDetail']>
     readonly usePlaylistTrackAll: UnwrapRef<typeof import('./apis/playlistTrackAll')['usePlaylistTrackAll']>
     readonly usePointer: UnwrapRef<typeof import('@vueuse/core')['usePointer']>
@@ -959,6 +961,7 @@ declare module '@vue/runtime-core' {
     readonly usePerformanceObserver: UnwrapRef<typeof import('@vueuse/core')['usePerformanceObserver']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
     readonly usePersonalized: UnwrapRef<typeof import('./apis/personalized')['usePersonalized']>
+    readonly usePlayMusicListDetail: UnwrapRef<typeof import('./composables/playerMusicList')['usePlayMusicListDetail']>
     readonly usePlaylistDetail: UnwrapRef<typeof import('./apis/playlistDetail')['usePlaylistDetail']>
     readonly usePlaylistTrackAll: UnwrapRef<typeof import('./apis/playlistTrackAll')['usePlaylistTrackAll']>
     readonly usePointer: UnwrapRef<typeof import('@vueuse/core')['usePointer']>

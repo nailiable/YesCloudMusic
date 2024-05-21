@@ -1,3 +1,5 @@
+import { isClient } from '@vueuse/core'
+
 export type IRouterType = 'query' | 'params'
 
 export function useNumberRoute<Key extends string>(k: Key, type: IRouterType = 'query'): number {
@@ -8,7 +10,7 @@ export function useNumberRoute<Key extends string>(k: Key, type: IRouterType = '
 
   const query = (route[type] || {}) as Record<Key, string>
 
-  if (!query[k] || !query[k].trim() || Number.isNaN(Number(query[k]))) {
+  if (isClient && (!query[k] || !query[k].trim() || Number.isNaN(Number(query[k])))) {
     message.error(t('song-list.item.error-not-found-id'))
     router.back()
     throw new Error(`${k} is required`)

@@ -1,6 +1,6 @@
 import { progress } from '~/modules/nprogress'
 
 export function useProgress() {
-  progress.start()
+  progress?.start()
   return progress
 }
