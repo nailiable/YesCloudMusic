@@ -1,0 +1,44 @@
+{
+  "name": "vue-music-playlist",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "A Vue 3 hook for music playlist",
+  "author": {
+    "name": "Naily Zero",
+    "email": "zero@naily.cc",
+    "url": "https://github.com/groupguanfang"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "vue3",
+    "music",
+    "playlist"
+  ],
+  "exports": {
+    "types": "./main,ts",
+    "import": "./dist/playlist.js",
+    "require": "./dist/playlist.umd.cjs"
+  },
+  "main": "./dist/playlist.umd.cjs",
+  "module": "./dist/playlist.js",
+  "types": "./lib/main.ts",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "prepublishOnly": "tsc && vite build",
+    "release": "pnpm publish"
+  },
+  "devDependencies": {
+    "@naiable/utils": "0.0.6",
+    "@vueuse/core": "10.11.0",
+    "ts-pattern": "5.2.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vue": "^3.4.27"
+  }
+}
