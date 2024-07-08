@@ -1,7 +1,7 @@
 {
   "name": "vue-music-playlist",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Vue 3 hook for music playlist",
   "author": {
     "name": "Naily Zero",
@@ -16,7 +16,7 @@
     "playlist"
   ],
   "exports": {
-    "types": "./main,ts",
+    "types": "./lib/main.ts",
     "import": "./dist/playlist.js",
     "require": "./dist/playlist.umd.cjs"
   },

@@ -35,6 +35,9 @@ importers:
       vue-i18n:
         specifier: ^9.13.1
         version: 9.13.1(vue@3.4.27(typescript@5.4.5))
+      vue-music-playlist:
+        specifier: workspace:*
+        version: link:libraries/playlist
       vue-router:
         specifier: ^4.3.2
         version: 4.3.2(vue@3.4.27(typescript@5.4.5))
